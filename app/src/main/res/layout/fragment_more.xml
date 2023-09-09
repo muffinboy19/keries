@@ -21,21 +21,21 @@
             android:id="@+id/leftguide"
             android:layout_width="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.10"
+            app:layout_constraintGuide_percent="0.05"
             android:layout_height="wrap_content"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/rightguide"
             android:layout_width="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.90"
+            app:layout_constraintGuide_percent="0.95"
             android:layout_height="wrap_content"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/upguide"
             android:layout_width="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.05"
+            app:layout_constraintGuide_percent="0.06"
             android:layout_height="wrap_content"/>
 
         <LinearLayout

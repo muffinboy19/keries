@@ -11,27 +11,46 @@
         android:layout_height="match_parent"
         android:background="@color/black">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginStart="5dp"
             android:text="FAQ"
             android:textColor="@color/white"
             android:textSize="28sp"
             app:layout_constraintStart_toEndOf="@+id/boso"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/background1"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
             app:layout_constraintTop_toBottomOf="@+id/linearLa66yout3">
 
             <LinearLayout
@@ -41,7 +60,7 @@
 
                 <TextView
                     android:id="@+id/q1"
-                    android:layout_width="260dp"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="@font/roboto"
@@ -78,13 +97,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/background1"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
             <LinearLayout
@@ -94,7 +113,7 @@
 
                 <TextView
                     android:id="@+id/q2"
-                    android:layout_width="260dp"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="@font/roboto"
@@ -130,13 +149,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/background1"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
             <LinearLayout
@@ -146,7 +165,7 @@
 
                 <TextView
                     android:id="@+id/q3"
-                    android:layout_width="260dp"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="@font/roboto"
@@ -182,13 +201,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayofffut3"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/background1"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
             <LinearLayout
@@ -198,7 +217,7 @@
 
                 <TextView
                     android:id="@+id/q4"
-                    android:layout_width="260dp"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="@font/roboto"
@@ -234,13 +253,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayou55t3"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:background="@drawable/background1"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
             app:layout_constraintTop_toBottomOf="@+id/linearLayofffut3">
 
             <LinearLayout
@@ -250,7 +269,7 @@
 
                 <TextView
                     android:id="@+id/q5"
-                    android:layout_width="260dp"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="@font/roboto"
@@ -286,14 +305,14 @@
 
         <LinearLayout
             android:id="@+id/linearLa66yout3"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:background="@drawable/background1"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toTopOf="@id/topGuide">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -302,7 +321,7 @@
 
                 <TextView
                     android:id="@+id/q6"
-                    android:layout_width="260dp"
+                    android:layout_width="310dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
                     android:fontFamily="@font/roboto"
@@ -338,21 +357,15 @@
 
         <ImageView
             android:id="@+id/boso"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="36dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/backsvg"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
 
 
 </FrameLayout>
