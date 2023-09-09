@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
 
 class TeamAdapter(private val teamMembers: List<TeamMember>) :
     RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
@@ -29,8 +30,8 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
                 .load(teamMember.url)
                 .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
                 .error(R.drawable.location_pin_svgrepo_com) // Add an error image
+                .transform(CircleCrop()) // Apply CircleCrop transformation here
                 .into(imageView)
-
         }
     }
 
