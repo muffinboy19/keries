@@ -2,7 +2,9 @@ package com.example.keries
 
 
 import Team
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,6 +41,14 @@ class BaseHome : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Inside your Activity's code, typically in the onCreate method
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                )
+        window.statusBarColor = Color.TRANSPARENT
+
         setContentView(R.layout.activity_base_home)
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
