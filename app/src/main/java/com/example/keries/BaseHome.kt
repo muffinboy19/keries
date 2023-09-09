@@ -51,9 +51,16 @@ class BaseHome : AppCompatActivity() {
 
         setContentView(R.layout.activity_base_home)
 
+
+
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         loadFragment(Home())
+        bottomNavigationView.selectedItemId = R.id.navigation_home
+
+
+
 
 
     }

@@ -128,6 +128,7 @@ class FAQ : Fragment() {
         buttonStates[d5] = false
         buttonStates[d6] = false
 
+
         d1.setOnClickListener {
             downFunction(a1, d1)
         }

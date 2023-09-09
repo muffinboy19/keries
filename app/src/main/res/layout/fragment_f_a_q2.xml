@@ -13,7 +13,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:background="@color/black">
 
         <androidx.constraintlayout.widget.Guideline
@@ -48,7 +49,7 @@
             app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
         <LinearLayout
-            android:id="@+id/linearLayout3"
+            android:id="@+id/l1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -56,7 +57,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintStart_toStartOf="@id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/linearLa66yout3">
+            app:layout_constraintTop_toBottomOf="@+id/l6">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -101,7 +102,7 @@
 
 
         <LinearLayout
-            android:id="@+id/linearLayout4"
+            android:id="@+id/l2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -109,7 +110,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintStart_toStartOf="@id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+            app:layout_constraintTop_toBottomOf="@+id/l1">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -154,7 +155,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/l3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -162,7 +163,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintStart_toStartOf="@id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+            app:layout_constraintTop_toBottomOf="@+id/l2">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -207,7 +208,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayofffut3"
+            android:id="@+id/l4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -215,7 +216,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintStart_toStartOf="@id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toBottomOf="@+id/l3">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -261,7 +262,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayou55t3"
+            android:id="@+id/l5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -269,7 +270,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintStart_toStartOf="@id/leftGuide"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayofffut3">
+            app:layout_constraintTop_toBottomOf="@+id/l4">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -281,9 +282,11 @@
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:fontFamily="@font/roboto"
                     android:paddingVertical="12dp"
                     android:paddingStart="12dp"
-                    android:fontFamily="@font/roboto"
                     android:paddingEnd="10dp"
                     android:text="How do i take part in effe team"
                     android:textColor="@color/white"
@@ -314,7 +317,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLa66yout3"
+            android:id="@+id/l6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -326,6 +329,7 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
+                android:id="@+id/r6"
                 android:layout_height="wrap_content">
 
                 <TextView
