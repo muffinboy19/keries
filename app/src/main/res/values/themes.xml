@@ -5,5 +5,11 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="AppBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemBackground">@color/sustem</item>
+<!--        <item name="android:textColor">@color/red</item>-->
+        <item name="itemHorizontalTranslationEnabled">true</item>
+    </style>
+
     <style name="Theme.Keries" parent="Base.Theme.Keries" />
 </resources>

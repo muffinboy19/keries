@@ -1,6 +1,15 @@
-<!-- custom_bottom_nav_item_background.xml -->
+<!-- res/drawable/bg_bottom_nav.xml -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@android:color/transparent" android:state_pressed="true" />
-    <item android:drawable="@android:color/transparent" android:state_focused="true" />
-    <item android:drawable="@android:color/transparent" />
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <!-- Add your desired background color here -->
+            <solid android:color="#282828" />
+        </shape>
+    </item>
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <!-- Add your desired background color for unchecked items here -->
+            <solid android:color="#00000000" />
+        </shape>
+    </item>
 </selector>
