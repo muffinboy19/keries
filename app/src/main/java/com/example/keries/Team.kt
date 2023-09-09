@@ -39,7 +39,7 @@ class Team : Fragment() {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-        reyclerview = view.findViewById<RecyclerView>(R.id.boxo)
+        reyclerview = view.findViewById<RecyclerView>(R.id.festiveCordi)
         reyclerview.layoutManager  = LinearLayoutManager(context)
         val  ii =  mutableListOf<TeamMember>()
         teamAdapter  = TeamAdapter(ii)
