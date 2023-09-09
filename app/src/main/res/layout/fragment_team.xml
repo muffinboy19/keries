@@ -8,13 +8,13 @@
     tools:layout_editor_absoluteY="56dp">
 
     <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-        android:background="@color/black"
-            android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="800dp"
             android:background="@color/black">
 
             <androidx.constraintlayout.widget.Guideline
@@ -43,54 +43,431 @@
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginStart="12dp"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center_vertical"
                 android:text="Team"
                 android:textColor="@color/white"
                 android:textSize="32sp"
-                app:layout_constraintStart_toEndOf="@+id/backteam"
-                app:layout_constraintTop_toTopOf="@+id/upguide" />
+                tools:layout_editor_absoluteX="73dp"
+                tools:layout_editor_absoluteY="37dp" />
+
+
+            <ImageView
+                android:id="@+id/backteam"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/backsvg"
+                tools:layout_editor_absoluteX="21dp"
+                tools:layout_editor_absoluteY="37dp" />
+
+
+            <TextView
+                android:id="@+id/coordinator"
+                android:layout_width="159dp"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat"
+                android:text="corrdiantor"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/festiveCordi"
+                app:layout_constraintTop_toBottomOf="@id/backteam" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/festiveCordi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/finance"
                 app:layout_constraintEnd_toStartOf="@+id/rightguide"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@+id/coordinator" />
-
-            <ImageView
-                android:id="@+id/backteam"
-                android:layout_width="40dp"
-                android:padding="5dp"
-                android:layout_height="40dp"
-                android:src="@drawable/backsvg"
-                app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toTopOf="@+id/upguide" />
+                app:layout_constraintTop_toBottomOf="@id/coordinator" />
 
             <TextView
-                android:id="@+id/coordinator"
+                android:id="@+id/finance"
                 android:layout_width="159dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/montserrat"
+                android:text="finance"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/financerelcyler"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                app:layout_constraintTop_toBottomOf="@id/festiveCordi" />
 
-                android:gravity="top"
-                android:text="corrdiantor"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/financerelcyler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@id/eventsnmange"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                app:layout_constraintTop_toBottomOf="@id/finance" />
+
+            <TextView
+                android:id="@+id/eventsnmange"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="200dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Eventes &amp; Mangement"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/eventsnmange"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                app:layout_constraintTop_toBottomOf="@id/financerelcyler" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eventesmangereycl"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@id/corporaterelations"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                app:layout_constraintTop_toBottomOf="@id/eventsnmange" />
+
+            <TextView
+                android:id="@+id/corporaterelations"
+                android:layout_width="59dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Corporate Relations"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/coroprate"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                app:layout_constraintTop_toBottomOf="@id/eventesmangereycl" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/coroprate"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@id/publicrealations"
+                app:layout_constraintTop_toBottomOf="@id/corporaterelations"
+                tools:layout_editor_absoluteX="20dp" />
+
+            <TextView
+                android:id="@+id/publicrealations"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Public relations"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/pr"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                app:layout_constraintTop_toBottomOf="@id/coroprate" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pr"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@id/branding"
+                app:layout_constraintTop_toBottomOf="@id/publicrealations"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/branding"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="branding &amp; logistics"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                app:layout_constraintBottom_toTopOf="@id/brnding"
+                app:layout_constraintTop_toBottomOf="@id/pr"
+                tools:layout_editor_absoluteX="21dp"
+                tools:layout_editor_absoluteY="283dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/brnding"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/hospitatltiy"
+                app:layout_constraintTop_toBottomOf="@id/brnding"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="714dp" />
+
+            <TextView
+                android:id="@+id/hospitatltiy"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:fontFamily="@font/montserrat"
+                android:text="Hospitality &amp; travel"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/hospitalllty"
+                app:layout_constraintTop_toBottomOf="@id/brnding"
+                tools:layout_editor_absoluteX="21dp"
+                tools:layout_editor_absoluteY="318dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hospitalllty"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/media"
+                app:layout_constraintTop_toBottomOf="@id/hospitatltiy"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="641dp" />
+
+            <TextView
+                android:id="@+id/media"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:fontFamily="@font/montserrat"
+                android:text="Media"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/mediaaaa"
+                app:layout_constraintTop_toBottomOf="@id/hospitalllty"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="357dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mediaaaa"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@id/filming"
+                app:layout_constraintTop_toBottomOf="@id/media"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="641dp" />
+
+            <TextView
+                android:id="@+id/filming"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="filming"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                app:layout_constraintBottom_toTopOf="@id/flimingdevven"
+                app:layout_constraintTop_toBottomOf="@id/mediaaaa"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="388dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/flimingdevven"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/creatives"
+                app:layout_constraintTop_toBottomOf="@id/filming"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="606dp" />
+
+            <TextView
+                android:id="@+id/creatives"
+                android:layout_width="159dp"
+
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="creatives"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/creativesreyc"
+                app:layout_constraintTop_toBottomOf="@id/flimingdevven"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="411dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/creativesreyc"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/technical"
+                app:layout_constraintTop_toBottomOf="@id/creatives"
+                tools:layout_editor_absoluteX="-13dp"
+                tools:layout_editor_absoluteY="616dp" />
+
+            <TextView
+                android:id="@+id/technical"
+                android:layout_width="159dp"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="technical"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/tecnialreycler"
+                app:layout_constraintTop_toBottomOf="@id/creativesreyc"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="259dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tecnialreycler"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/weboperations"
+                app:layout_constraintTop_toBottomOf="@id/technical"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="590dp" />
+
+            <TextView
+                android:id="@+id/weboperations"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="web operations"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/wed"
+                app:layout_constraintTop_toBottomOf="@id/tecnialreycler"
+                tools:layout_editor_absoluteX="25dp"
+                tools:layout_editor_absoluteY="455dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wed"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@id/weboperations"
+                app:layout_constraintTop_toBottomOf="@id/appi"
+                tools:layout_editor_absoluteX="167dp" />
+
+            <TextView
+                android:id="@+id/appi"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="App operations"
+                android:textAllCaps="true"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/apppp"
+                app:layout_constraintTop_toBottomOf="@id/wed"
+                tools:layout_editor_absoluteX="167dp"
+                tools:layout_editor_absoluteY="283dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/apppp"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
+                app:layout_constraintBottom_toTopOf="@id/ooc"
+                app:layout_constraintTop_toBottomOf="@id/appi"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="661dp" />
+
+            <TextView
+                android:id="@+id/ooc"
+                android:layout_width="159dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/montserrat"
+                android:text="OOC"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+
+                app:layout_constraintBottom_toTopOf="@id/cco"
+                app:layout_constraintTop_toBottomOf="@id/apppp"
+                tools:layout_editor_absoluteX="220dp"
+                tools:layout_editor_absoluteY="125dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cco"
+                app:layout_constraintEnd_toStartOf="@+id/rightguide"
+                app:layout_constraintStart_toStartOf="@+id/leftguide"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ooc"
+                tools:layout_editor_absoluteX="16dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

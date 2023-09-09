@@ -13,13 +13,18 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
 
     inner class TeamViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
-        private val wingTextView: TextView = itemView.findViewById(R.id.wingTextView)
+        private val wingTextView: TextView = itemView.findViewById(R.id.desginations)
         private val imageView: ImageView = itemView.findViewById(R.id.imageView)
 
 
         fun bind(teamMember: TeamMember) {
             nameTextView.text = teamMember.name
-            wingTextView.text = teamMember.wing
+            if(teamMember.no>42){
+                wingTextView.text = "EXECUTIVE"
+            }
+            else{
+                wingTextView.text = "HEAD"
+            }
             Glide.with(itemView.context)
                 .load(teamMember.url)
                 .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image

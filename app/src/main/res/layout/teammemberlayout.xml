@@ -38,8 +38,8 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/wingTextView"
-            android:text="WingName"
+            android:id="@+id/desginations"
+            android:text="desgination"
             android:layout_marginVertical="5dp"
             android:textColor="@color/white"
             android:fontFamily="@font/roboto"
