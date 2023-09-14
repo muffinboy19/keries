@@ -39,6 +39,7 @@ android {
 
 dependencies {
 
+    implementation ("com.facebook.fresco:fresco:2.5.0")
     implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("com.firebaseui:firebase-ui-firestore:8.0.0")
     implementation("androidx.core:core-ktx:1.10.1")

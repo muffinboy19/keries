@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.TeamAdapter
 import com.example.keries.TeamMember
+import com.facebook.drawee.backends.pipeline.Fresco
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Team : Fragment() {
@@ -42,8 +43,7 @@ class Team : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
+        Fresco.initialize(requireContext())
         val backbutton = view.findViewById<ImageView>(R.id.backteam)
         backbutton.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()

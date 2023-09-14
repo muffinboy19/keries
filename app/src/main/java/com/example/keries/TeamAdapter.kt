@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import android.net.Uri
+import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.drawee.view.SimpleDraweeView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 
@@ -26,12 +29,16 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
             else{
                 wingTextView.text = "HEAD"
             }
-            Glide.with(itemView.context)
-                .load(teamMember.url)
-                .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
-                .error(R.drawable.location_pin_svgrepo_com) // Add an error image
-                .transform(CircleCrop()) // Apply CircleCrop transformation here
-                .into(imageView)
+//            Glide.with(itemView.context)
+//                .load(teamMember.url)
+//                .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
+//                .error(R.drawable.location_pin_svgrepo_com) // Add an error image
+//                .transform(CircleCrop()) // Apply CircleCrop transformation here
+//                .into(imageView)
+
+
+            val imageUri = Uri.parse(teamMember.url)
+            imageView.setImageURI(imageUri)
         }
     }
 
