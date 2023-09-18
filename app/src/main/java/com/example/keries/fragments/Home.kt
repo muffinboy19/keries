@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -63,6 +64,11 @@ class Home : Fragment() {
         fetchSystemDateTime()
         fetchFirestoreData()
 
+        val notificationButton = view.findViewById<ImageView>(R.id.notificationbutton)
+        notificationButton.setOnClickListener {
+            loadFragment(notification())
+        }
+
     }
 
     private fun fetchFirestoreData() {
@@ -81,6 +87,13 @@ class Home : Fragment() {
             .addOnFailureListener { exception ->
 
             }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null) // Add to back stack so you can navigate back
+            .commit()
     }
 
     private fun fetchSystemDateTime() {
