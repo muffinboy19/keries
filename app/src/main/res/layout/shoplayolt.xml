@@ -22,7 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:orientation="vertical">
+            android:layout_marginStart="10dp"
+             android:orientation="vertical">
+
 
             <TextView
                 android:id="@+id/productName"
@@ -73,6 +75,7 @@
         </LinearLayout>
 
         <ImageView
+            android:layout_marginEnd="10dp"
             android:id="@+id/productImage"
             android:layout_width="180dp"
             android:paddingEnd="20dp"

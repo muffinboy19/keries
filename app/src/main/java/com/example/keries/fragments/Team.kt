@@ -1,3 +1,5 @@
+package com.example.keries.fragments
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,8 +10,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
-import com.example.keries.TeamAdapter
-import com.example.keries.TeamMember
+import com.example.keries.adapter.TeamAdapter
+import com.example.keries.dataClass.TeamMember
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.google.firebase.firestore.FirebaseFirestore
 

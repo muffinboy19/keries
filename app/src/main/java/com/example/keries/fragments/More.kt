@@ -1,12 +1,12 @@
-package com.example.keries
+package com.example.keries.fragments
 
-import Team
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.example.keries.R
 
 class More : Fragment() {
     override fun onCreateView(

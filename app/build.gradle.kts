@@ -35,11 +35,18 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation ("com.facebook.fresco:fresco:2.5.0")
+    implementation ("io.coil-kt:coil:1.4.0")// Use the latest version available
+    implementation ("com.nostra13.universalimageloader:universal-image-loader:1.9.5")
+    implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
+    implementation ("com.google.firebase:firebase-messaging-directboot:23.2.1")
     implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("com.firebaseui:firebase-ui-firestore:8.0.0")
     implementation("androidx.core:core-ktx:1.10.1")
@@ -47,6 +54,9 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.squareup.picasso:picasso:2.71828")

@@ -1,4 +1,4 @@
-package com.example.keries
+package com.example.keries.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.keries.R
+import com.example.keries.adapter.productAdapter
+import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Shop : Fragment() {

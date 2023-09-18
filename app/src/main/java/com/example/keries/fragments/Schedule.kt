@@ -1,10 +1,11 @@
-package com.example.keries
+package com.example.keries.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.keries.R
 
 class Schedule : Fragment() {
 

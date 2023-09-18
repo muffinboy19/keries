@@ -1,4 +1,4 @@
-package com.example.keries
+package com.example.keries.fragments
 
 
 import android.os.Bundle
@@ -10,6 +10,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.keries.R
+import com.example.keries.adapter.featuredEventsAdapter
+import com.example.keries.dataClass.FeaturedEventes
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 import java.util.*

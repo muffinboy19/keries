@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".fragments.Home">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -16,38 +16,57 @@
             android:layout_height="wrap_content"
             android:background="@color/black">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/topGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="28dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
                 android:src="@drawable/baseline_notifications_24"
-                app:layout_constraintStart_toEndOf="@+id/textView20"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+                app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
             <TextView
                 android:id="@+id/countdownTextView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="68dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="500dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center_horizontal|center_vertical"
                 android:text="00:00:00"
-                android:textSize="52sp"
                 android:textColor="@color/white"
-                android:fontFamily="@font/roboto"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView21"
-                app:layout_constraintVertical_bias="1.0" />
+                android:textSize="52sp"
+                app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+                app:layout_constraintStart_toStartOf="@+id/leftGuide"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
             <TextView
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="bottom"
                 android:text="Effervescence'23"
@@ -55,23 +74,22 @@
                 android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="24dp"
                 android:src="@drawable/effesvghome"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="@+id/leftGuide"
+                app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
             <TextView
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/roboto"
                 android:text="ITS BEGINING IN "
                 android:textAllCaps="true"
@@ -82,13 +100,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="300dp"
                 android:id="@+id/FeaturedEventRecylerView"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="100dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="Day          Hours       miniutes      seconds"
+                android:textColor="#ff0000"
+                app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+                app:layout_constraintStart_toStartOf="@+id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
 
 

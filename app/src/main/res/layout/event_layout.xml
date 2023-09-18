@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="409dp"
     android:layout_height="729dp"
-    tools:context=".Events">
+    tools:context=".fragments.Events">
 
 
     <androidx.core.widget.NestedScrollView

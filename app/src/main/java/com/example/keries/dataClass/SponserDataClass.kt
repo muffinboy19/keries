@@ -1,4 +1,4 @@
-package com.example.keries
+package com.example.keries.dataClass
 
 data class sponserDataClass (
     val sponserNames: String,

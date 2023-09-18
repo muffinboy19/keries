@@ -69,10 +69,8 @@
 
 
 
-package com.example.keries
+package com.example.keries.fragments
 
-import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -80,8 +78,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.view.animation.Animation
-import android.view.animation.TranslateAnimation
+import com.example.keries.R
 
 class FAQ : Fragment() {
 
