@@ -54,6 +54,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation ("com.airbnb.android:lottie:6.1.0")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")

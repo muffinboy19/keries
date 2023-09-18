@@ -32,15 +32,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // Check if message contains a data payload.
         if (remoteMesage.data.isNotEmpty()) {
             Log.d(TAG, "Message data payload: ${remoteMesage.data}")
-
-            // Check if data needs to be processed by long running job
-//            if (needsToBeScheduled()) {
-//                // For long-running tasks (10 seconds or more) use WorkManager.
-//                scheduleJob()
-//            } else {
-//                // Handle message within 10 seconds
-//                handleNow()
-//            }
             Toast.makeText(this,"wow",Toast.LENGTH_SHORT).show()
         }
 
@@ -53,8 +44,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d(TAG, "Refreshed token: $token")
-
-        // If you want to handle the token refresh, you can do it here.
     }
 
     fun getRemoteView(title: String,messge: String): RemoteViews {
