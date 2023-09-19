@@ -2,7 +2,12 @@ package com.example.keries.dataClass
 
 data class Event_DataClass(
 
-    val title: String,
-    val location: String,
-    val time: String,
+    val date : String,
+    val details : String,
+    val form : String,
+    val name: String,
+    val no : Long,
+    val time : String,
+    val url : String ,
+    val venue: String,
 )

@@ -80,7 +80,7 @@
             android:layout_width="180dp"
             android:paddingEnd="20dp"
             android:layout_height="180dp"
-            android:scaleType="centerInside" />
+            android:scaleType="centerCrop" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
