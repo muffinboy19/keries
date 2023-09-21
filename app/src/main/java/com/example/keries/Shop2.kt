@@ -14,22 +14,12 @@ class Shop2 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shop2, container, false)
-
-
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
+        // Additional code can be added here to perform actions when the view is created
+        // For example, you can initialize views, set up click listeners, etc.
     }
-
-
-
-
-
-
 }

@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
+import com.example.keries.Shop2
 import com.example.keries.adapter.ShowEventAdapter
-import com.example.keries.adapter.TeamAdapter
 import com.example.keries.dataClass.Event_DataClass
-import com.example.keries.dataClass.TeamMember
+import com.example.keries.dataClass.FeaturedEventes
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Events : Fragment() {
@@ -29,8 +29,6 @@ class Events : Fragment() {
     private lateinit var InformalRv: RecyclerView
     private lateinit var MainStageRV: RecyclerView
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,9 +40,7 @@ class Events : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
+        // Initialize RecyclerViews and adapters
         nimritiRv = view.findViewById(R.id.nimritiRV)
         rangtaringiniRV = view.findViewById(R.id.rangtaringiniRV)
         sarasvaRV = view.findViewById(R.id.sarasvaRV)
@@ -54,25 +50,34 @@ class Events : Fragment() {
         InformalRv = view.findViewById(R.id.InformalRv)
         MainStageRV = view.findViewById(R.id.MainStageRV)
         amsRV = view.findViewById(R.id.amsRV)
+
+        // Initialize and populate RecyclerViews with event data
         val ij = mutableListOf<Event_DataClass>()
-        showEventAdapter = ShowEventAdapter(ij)
-        fetchFromFireStoreEvents("AMS",amsRV)
-        fetchFromFireStoreEvents("Dance",geneticxRV)
-        fetchFromFireStoreEvents("Dramatics",rangtaringiniRV)
-        fetchFromFireStoreEvents("Fine Arts",nimritiRv)
-        fetchFromFireStoreEvents("Literature",sarasvaRV)
-        fetchFromFireStoreEvents("Music",virtuosiRV)
-        fetchFromFireStoreEvents("Gaming",gamingRv)
-        fetchFromFireStoreEvents("Informal",InformalRv)
-        fetchFromFireStoreEvents("Main Stage",MainStageRV)
-
-
+        showEventAdapter = ShowEventAdapter(ij,this)
+        fetchFromFireStoreEvents("AMS", amsRV)
+        fetchFromFireStoreEvents("Dance", geneticxRV)
+        fetchFromFireStoreEvents("Dramatics", rangtaringiniRV)
+        fetchFromFireStoreEvents("Fine Arts", nimritiRv)
+        fetchFromFireStoreEvents("Literature", sarasvaRV)
+        fetchFromFireStoreEvents("Music", virtuosiRV)
+        fetchFromFireStoreEvents("Gaming", gamingRv)
+        fetchFromFireStoreEvents("Informal", InformalRv)
+        fetchFromFireStoreEvents("Main Stage", MainStageRV)
     }
-    private fun fetchFromFireStoreEvents(Events: String, recyclerView: RecyclerView) {
-        db.collection(Events)
+
+    fun onItemClick(item: FeaturedEventes){
+        val nextFragment = Shop()
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container,nextFragment)
+        transaction.commit()
+    }
+
+    private fun fetchFromFireStoreEvents(eventType: String, recyclerView: RecyclerView) {
+        // Fetch event data from Firestore for the specified event type
+        db.collection(eventType)
             .get()
             .addOnSuccessListener {
-                val showeventlislt = mutableListOf<Event_DataClass>()
+                val showeventlist = mutableListOf<Event_DataClass>()
                 for (document in it) {
                     val date = document.getString("name") ?: ""
                     val details = document.getString("url") ?: ""
@@ -82,18 +87,19 @@ class Events : Fragment() {
                     val time = document.getString("url") ?: ""
                     val url = document.getString("url") ?: ""
                     val venue = document.getString("url") ?: ""
-                    showeventlislt.add(Event_DataClass(date,details, form, name, no, time, url, venue))
+                    showeventlist.add(
+                        Event_DataClass(date, details, form, name, no, time, url, venue)
+                    )
                 }
 
-                showEventAdapter = ShowEventAdapter(showeventlislt)
+                // Set up the RecyclerView adapter with the retrieved event data
+                showEventAdapter = ShowEventAdapter(showeventlist, this)
                 recyclerView.layoutManager =
-                    LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)// You need to define this constructor in your TeamAdapter class
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
                 recyclerView.adapter = showEventAdapter
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
             }
-
-
     }
 }

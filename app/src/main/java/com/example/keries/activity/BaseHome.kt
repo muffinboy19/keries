@@ -1,6 +1,5 @@
 package com.example.keries.activity
 
-
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -24,62 +23,60 @@ import com.example.keries.R
 import com.example.keries.fragments.Schedule
 import com.example.keries.fragments.Shop
 
-
 class BaseHome : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Intent>
 
+    // Listener for handling navigation item selection
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_events -> {
-                loadFragment(Events())
+                loadFragment(Events()) // Load Events Fragment
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_schedule -> {
-                loadFragment(Schedule())
+                loadFragment(Schedule()) // Load Schedule Fragment
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_home -> {
-                loadFragment(Home())
+                loadFragment(Home()) // Load Home Fragment
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_shop -> {
-                loadFragment(Shop())
+                loadFragment(Shop()) // Load Shop Fragment
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_more -> {
-                loadFragment(More())
+                loadFragment(More()) // Load More Fragment
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
     }
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Initialize Firebase and subscribe to a topic for notifications
         FirebaseApp.initializeApp(this)
         FirebaseMessaging.getInstance().subscribeToTopic("notification")
 
+        // Set up the status bar and layout
         window.decorView.systemUiVisibility = (
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                         View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 )
         window.statusBarColor = Color.TRANSPARENT
-
         setContentView(R.layout.activity_base_home)
 
-
-
+        // Initialize views and load the Home Fragment by default
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         loadFragment(Home())
         bottomNavigationView.selectedItemId = R.id.navigation_home
 
-
+        // Initialize the launcher for requesting notification permission
         requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 // Permission granted, continue with your app.
@@ -90,12 +87,10 @@ class BaseHome : AppCompatActivity() {
             }
         }
 
-        // Check if notification permission is granted, if not, request it.
+        // Check if notification permission is granted, if not, request it
         if (!isNotificationPermissionGranted()) {
             requestNotificationPermission()
         }
-
-
     }
 
     private fun loadFragment(fragment: Fragment) {
@@ -129,10 +124,4 @@ class BaseHome : AppCompatActivity() {
         builder.setCancelable(false)
         builder.show()
     }
-
-
-
 }
-
-
-
