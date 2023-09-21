@@ -13,8 +13,7 @@ import com.example.keries.dataClass.Event_DataClass
 import com.example.keries.dataClass.FeaturedEventes
 import com.example.keries.fragments.Events
 
-class featuredEventsAdapter(private val items: List<FeaturedEventes>,
-                            private val itemClickListener:Events) :
+class featuredEventsAdapter(private val items: List<FeaturedEventes>) :
     RecyclerView.Adapter<featuredEventsAdapter.FeaturedEventesViewHolder>() {
 
     interface OnItemClickListener{
@@ -31,9 +30,9 @@ class featuredEventsAdapter(private val items: List<FeaturedEventes>,
         val item = items[position]
         holder.bind(item)
 
-        holder.itemView.setOnClickListener{
-            itemClickListener.onItemClick(item)
-        }
+//        holder.itemView.setOnClickListener{
+//            itemClickListener.onItemClick(item)
+//        }
     }
 
     override fun getItemCount(): Int = items.size

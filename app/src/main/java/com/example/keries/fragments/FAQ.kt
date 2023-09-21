@@ -82,8 +82,9 @@ import com.example.keries.R
 
 class FAQ : Fragment() {
 
-//    private val buttonStates = mutableMapOf<ImageView, Boolean>()
+    // Store button states (whether they are clicked or not)
     private val buttonStates = mutableMapOf<ImageView, Boolean>()
+    // Set the initial drop-down height
     private val dropHeight = 500
 
     override fun onCreateView(
@@ -97,6 +98,7 @@ class FAQ : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Initialize UI elements
         val d1 = view.findViewById<ImageView>(R.id.d1)
         val d2 = view.findViewById<ImageView>(R.id.d2)
         val d3 = view.findViewById<ImageView>(R.id.d3)
@@ -110,14 +112,13 @@ class FAQ : Fragment() {
         val a5 = view.findViewById<TextView>(R.id.a5)
         val a6 = view.findViewById<TextView>(R.id.a6)
 
-
+        // Initialize the return button
         val retw = view.findViewById<ImageView>(R.id.boso)
-
         retw.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-        // Initialize button states
+        // Initialize button states as false (not clicked)
         buttonStates[d1] = false
         buttonStates[d2] = false
         buttonStates[d3] = false
@@ -125,7 +126,7 @@ class FAQ : Fragment() {
         buttonStates[d5] = false
         buttonStates[d6] = false
 
-
+        // Set click listeners for each button
         d1.setOnClickListener {
             downFunction(a1, d1)
         }
@@ -146,18 +147,24 @@ class FAQ : Fragment() {
         }
     }
 
+    // Toggle the visibility of the answer text and rotate the arrow button
     private fun downFunction(a: TextView, d: ImageView) {
         val currentState = buttonStates[d] ?: false
 
         if (currentState) {
+            // If the answer is visible, hide it and rotate the arrow button back to default
             a.visibility = View.GONE
             d.animate().rotation(0F)
         } else {
+            // If the answer is hidden, show it and rotate the arrow button 180 degrees
             a.visibility = View.VISIBLE
             d.animate().rotation(180F)
         }
+        // Update the button state
         buttonStates[d] = !currentState
     }
+}
+
 
 
 
@@ -214,4 +221,4 @@ class FAQ : Fragment() {
 
 
 
-}
+

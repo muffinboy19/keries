@@ -48,6 +48,7 @@ class Shop : Fragment() {
         val nextFragment = Shop2()
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,nextFragment)
+        transaction.addToBackStack(null)
         transaction.commit()
     }
 
