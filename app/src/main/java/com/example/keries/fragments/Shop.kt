@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
-import com.example.keries.Shop2
+//import com.example.keries.Shop2
 import com.example.keries.adapter.productAdapter
 import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore
@@ -42,10 +42,23 @@ class Shop : Fragment() {
 
         // Fetch data from Firestore
         fetchFirestoreData()
+
+
+//        val shop2fragment = Shop2()
+//        shop2fragment.arguments = bundle
+
     }
 
     fun onItemClick(item:productDataClass){
+        val bundle=Bundle()
+        bundle.putString("prize" , item.productPrize)
+        bundle.putString("name" , item.productNames)
+        bundle.putString("type" , item.productTypes)
+        bundle.putString("descrip" , item.productDescription)
+        bundle.putString("image" , item.productImageUrl)
         val nextFragment = Shop2()
+        nextFragment.arguments=bundle
+
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,nextFragment)
         transaction.addToBackStack(null)
@@ -53,6 +66,8 @@ class Shop : Fragment() {
     }
 
     private fun fetchFirestoreData() {
+
+        productList.clear()
         val db = FirebaseFirestore.getInstance()
         db.collection("Merch")
             .get()

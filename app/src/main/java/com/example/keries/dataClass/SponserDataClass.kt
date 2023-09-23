@@ -5,5 +5,4 @@ data class sponserDataClass (
     val sponerDesgination : String,
     val sponserImageUrl: String,
 
-
 )
