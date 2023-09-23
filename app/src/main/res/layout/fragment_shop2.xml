@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Shop2">
+    tools:context=".fragments.Shop2">
 
 <!--    <androidx.core.widget.NestedScrollView-->
 <!--        android:background="@color/black"-->
