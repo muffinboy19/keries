@@ -27,29 +27,12 @@ class Home : Fragment() {
     private  var FeaturedEventsList  : MutableList<FeaturedEventes> = mutableListOf()
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var countdownTextView: TextView
-
-
-
-
-
-
-
-    // this code should be touched
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
-
-
-
-
-
-
-
-
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

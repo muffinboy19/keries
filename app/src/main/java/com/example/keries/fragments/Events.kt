@@ -9,10 +9,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
-import com.example.keries.Shop2
 import com.example.keries.adapter.ShowEventAdapter
 import com.example.keries.dataClass.Event_DataClass
-import com.example.keries.dataClass.FeaturedEventes
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Events : Fragment() {
@@ -63,10 +61,12 @@ class Events : Fragment() {
         fetchFromFireStoreEvents("Gaming", gamingRv)
         fetchFromFireStoreEvents("Informal", InformalRv)
         fetchFromFireStoreEvents("Main Stage", MainStageRV)
+
+
     }
 
-    fun onItemClick(item: FeaturedEventes){
-        val nextFragment = Shop()
+    fun onItemClick(item: Event_DataClass){
+        val nextFragment = eventdetails()
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,nextFragment)
         transaction.commit()

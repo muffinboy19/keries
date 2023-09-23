@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
-import com.example.keries.Shop2
 import com.example.keries.adapter.productAdapter
 import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore

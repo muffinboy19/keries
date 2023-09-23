@@ -81,7 +81,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/effesvghome"
+                android:src="@drawable/bluevg"
                 app:layout_constraintStart_toStartOf="@+id/leftGuide"
                 app:layout_constraintTop_toTopOf="@+id/topGuide" />
 
