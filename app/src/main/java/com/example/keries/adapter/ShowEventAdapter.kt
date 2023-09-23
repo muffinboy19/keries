@@ -5,15 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.keries.R
 import com.example.keries.dataClass.Event_DataClass
+import com.example.keries.fragments.Events
 
 
-class ShowEventAdapter(private val showevents: List<Event_DataClass>) :
+class ShowEventAdapter(private val showevents: List<Event_DataClass>, events: Events) :
     RecyclerView.Adapter<ShowEventAdapter.ShowEventViewHolder>() {
 
     inner class ShowEventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -9,10 +9,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.keries.R
+import com.example.keries.dataClass.Event_DataClass
 import com.example.keries.dataClass.FeaturedEventes
+import com.example.keries.fragments.Events
 
 class featuredEventsAdapter(private val items: List<FeaturedEventes>) :
     RecyclerView.Adapter<featuredEventsAdapter.FeaturedEventesViewHolder>() {
+
+    interface OnItemClickListener{
+        fun OnItemClick(item:Event_DataClass)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeaturedEventesViewHolder {
         val view =
@@ -23,6 +29,10 @@ class featuredEventsAdapter(private val items: List<FeaturedEventes>) :
     override fun onBindViewHolder(holder: FeaturedEventesViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
+
+//        holder.itemView.setOnClickListener{
+//            itemClickListener.onItemClick(item)
+//        }
     }
 
     override fun getItemCount(): Int = items.size
