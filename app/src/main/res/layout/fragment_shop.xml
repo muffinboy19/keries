@@ -47,11 +47,31 @@
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toTopOf="@id/topGuide" />
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/textView4"
+                app:layout_constraintStart_toStartOf="@id/leftGuide"
+                app:layout_constraintEnd_toEndOf="@id/rightGuide">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <include layout="@layout/shoplayolt_shimmer"/>
+                    <include layout="@layout/shoplayolt_shimmer"/>
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="0dp"
                 android:id="@+id/productreyclerview"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />

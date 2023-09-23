@@ -1,60 +1,60 @@
 package com.example.keries.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import com.example.keries.R
+import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [eventdetails.newInstance] factory method to
- * create an instance of this fragment.
- */
 class eventdetails : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_eventdetails, container, false)
+        val root = inflater.inflate(R.layout.fragment_eventdetails, container, false)
+
+        val societyName = root.findViewById<TextView>(R.id.textView2)
+        val eventName = root.findViewById<TextView>(R.id.textView)
+        val eventDescription = root.findViewById<TextView>(R.id.descriptionEventTextView)
+        val location = root.findViewById<TextView>(R.id.locationTextView)
+        val time = root.findViewById<TextView>(R.id.TimeTextView)
+        val image = root.findViewById<ImageView>(R.id.eventImage)
+
+        val date = arguments?.getString("date")
+        val details = arguments?.getString("details")
+        val form = arguments?.getString("form")
+        val name = arguments?.getString("name")
+        val no = arguments?.getString("no")
+        val timee = arguments?.getString("time")
+        val url = arguments?.getString("url")
+        val venue = arguments?.getString("venue")
+
+        if(details!=null){
+            eventDescription.text = details
+        }
+        if(name!=null){
+            eventName.text = name
+        }
+        if(location!=null){
+            location.text=venue
+            time.text=timee
+        }
+        if(time!=null){
+            time.text=timee
+        }
+//        if(url!=null){
+//            Picasso.get().load(url).into(image)
+//        }
+        return root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment eventdetails.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            eventdetails().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

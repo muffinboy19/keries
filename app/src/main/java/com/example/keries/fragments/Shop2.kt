@@ -15,10 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 
 class Shop2 : Fragment() {
-
-//    private var productList : MutableList<productDataClass> = mutableListOf()
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

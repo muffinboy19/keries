@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.productAdapter
 import com.example.keries.dataClass.productDataClass
+import com.facebook.shimmer.Shimmer
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Shop : Fragment() {
@@ -19,13 +22,23 @@ class Shop : Fragment() {
     private lateinit var productadapter: productAdapter
     private val db = FirebaseFirestore.getInstance()
     private  var productList : MutableList<productDataClass> = mutableListOf()
+    private lateinit var shimmerFrameLayout:ShimmerFrameLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shop, container, false)
+        val root = inflater.inflate(R.layout.fragment_shop, container, false)
+        shimmerFrameLayout= root.findViewById(R.id.shimmer)
+
+        val shimmer = Shimmer.AlphaHighlightBuilder()
+            .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
+            .setDuration(3000)
+            .setAutoStart(true)
+            .build()
+        shimmerFrameLayout.setShimmer(shimmer)
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -74,6 +87,9 @@ class Shop : Fragment() {
                     val url = document.getString("url") ?: ""
                     val item = productDataClass(name, type, desccription, prize, url)
                     productList.add(item)
+                    shimmerFrameLayout.stopShimmer()
+                    shimmerFrameLayout.isVisible =false
+                    productRecyclerView.isVisible = true
                 }
 
                 // Notify the adapter that the data set has changed

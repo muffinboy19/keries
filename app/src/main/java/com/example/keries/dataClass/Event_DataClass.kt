@@ -1,7 +1,6 @@
 package com.example.keries.dataClass
 
 data class Event_DataClass(
-
     val date : String,
     val details : String,
     val form : String,

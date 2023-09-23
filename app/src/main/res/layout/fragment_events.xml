@@ -64,7 +64,6 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/nimritiRV"
                 android:layout_width="0dp"
-                android:background="@color/white"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

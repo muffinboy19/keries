@@ -1,5 +1,6 @@
 package com.example.keries.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,12 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.TeamAdapter
 import com.example.keries.dataClass.TeamMember
 import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.shimmer.Shimmer
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Team : Fragment() {
@@ -34,13 +38,52 @@ class Team : Fragment() {
     private lateinit var wrv: RecyclerView
     private lateinit var arv: RecyclerView
     private lateinit var orv: RecyclerView
+    lateinit var shimmerCoordi: ShimmerFrameLayout
+    lateinit var shimmerFinace: ShimmerFrameLayout
+    lateinit var shimmerEvent: ShimmerFrameLayout
+    lateinit var shimmerCr: ShimmerFrameLayout
+    lateinit var shimmerPr: ShimmerFrameLayout
+    lateinit var shimmerBrand: ShimmerFrameLayout
+    lateinit var shimmerHosp: ShimmerFrameLayout
+    lateinit var shimmerMedia: ShimmerFrameLayout
+    lateinit var shimmerFilm: ShimmerFrameLayout
+    lateinit var shimmerCreat: ShimmerFrameLayout
+    lateinit var shimmerTech: ShimmerFrameLayout
+    lateinit var shimmerWeb: ShimmerFrameLayout
+    lateinit var shimmerAppi: ShimmerFrameLayout
+    lateinit var shimmerOoc: ShimmerFrameLayout
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_team, container, false)
+        val root = inflater.inflate(R.layout.fragment_team, container, false)
+
+        shimmerCoordi = root.findViewById(R.id.shimmerCoordi)
+        shimmerFinace = root.findViewById(R.id.shimmerFinance)
+        shimmerEvent = root.findViewById(R.id.shimmerEvent)
+        shimmerCr = root.findViewById(R.id.shimmerCr)
+        shimmerPr = root.findViewById(R.id.shimmerPr)
+        shimmerBrand = root.findViewById(R.id.shimmerBrand)
+        shimmerHosp = root.findViewById(R.id.shimmerHosp)
+        shimmerMedia = root.findViewById(R.id.shimmerMedia)
+        shimmerFilm = root.findViewById(R.id.shimmerFilm)
+        shimmerCreat = root.findViewById(R.id.shimmerCreat)
+        shimmerTech = root.findViewById(R.id.shimmerTech)
+        shimmerWeb = root.findViewById(R.id.shimmerWeb)
+        shimmerAppi = root.findViewById(R.id.shimmerAppi)
+        shimmerOoc = root.findViewById(R.id.shimmerOoc)
+
+        val shimmer = Shimmer.AlphaHighlightBuilder()
+            .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
+            .setDuration(3000)
+            .setAutoStart(true)
+            .build()
+        shimmerCoordi.setShimmer(shimmer)
+
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,7 +94,7 @@ class Team : Fragment() {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-        Crv = view.findViewById<RecyclerView>(R.id.festiveCordi)
+        Crv = view.findViewById(R.id.festiveCordi)
         frv = view.findViewById(R.id.financerelcyler)
         enmrv = view.findViewById(R.id.eventesmangereycl)
         crrv  = view.findViewById(R.id.coroprate)
@@ -107,6 +150,51 @@ class Team : Fragment() {
                 recyclerView.layoutManager =
                     LinearLayoutManager(requireContext())// You need to define this constructor in your TeamAdapter class
                 recyclerView.adapter = teamAdapter
+
+                shimmerCoordi.stopShimmer()
+                shimmerFinace.stopShimmer()
+                shimmerEvent.stopShimmer()
+                shimmerCr.stopShimmer()
+                shimmerPr.stopShimmer()
+                shimmerBrand.stopShimmer()
+                shimmerHosp.stopShimmer()
+                shimmerMedia.stopShimmer()
+                shimmerFilm.stopShimmer()
+                shimmerCreat.stopShimmer()
+                shimmerTech.stopShimmer()
+                shimmerWeb.stopShimmer()
+                shimmerAppi.stopShimmer()
+                shimmerOoc.stopShimmer()
+                shimmerCoordi.isVisible=false
+                shimmerFinace.isVisible = false
+                shimmerEvent.isVisible = false
+                shimmerCr.isVisible = false
+                shimmerPr.isVisible = false
+                shimmerBrand.isVisible = false
+                shimmerHosp.isVisible = false
+                shimmerMedia.isVisible = false
+                shimmerFilm.isVisible = false
+                shimmerCreat.isVisible = false
+                shimmerTech.isVisible = false
+                shimmerWeb.isVisible = false
+                shimmerAppi.isVisible = false
+                shimmerOoc.isVisible = false
+                Crv.isVisible=true
+                frv.isVisible=true
+                enmrv.isVisible=true
+                crrv.isVisible=true
+                prrv.isVisible=true
+                blrv.isVisible=true
+                hrv.isVisible=true
+                mrv.isVisible=true
+                flrv.isVisible=true
+                crerv.isVisible=true
+                trv.isVisible=true
+                wrv.isVisible=true
+                arv.isVisible=true
+                orv.isVisible=true
+//                Crv.isVisible=true
+
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()

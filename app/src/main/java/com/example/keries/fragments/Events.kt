@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.ShowEventAdapter
 import com.example.keries.dataClass.Event_DataClass
+import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Events : Fragment() {
@@ -26,6 +27,7 @@ class Events : Fragment() {
     private lateinit var gamingRv: RecyclerView
     private lateinit var InformalRv: RecyclerView
     private lateinit var MainStageRV: RecyclerView
+    private  var ij : MutableList<Event_DataClass> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +52,7 @@ class Events : Fragment() {
         amsRV = view.findViewById(R.id.amsRV)
 
         // Initialize and populate RecyclerViews with event data
-        val ij = mutableListOf<Event_DataClass>()
+
         showEventAdapter = ShowEventAdapter(ij,this)
         fetchFromFireStoreEvents("AMS", amsRV)
         fetchFromFireStoreEvents("Dance", geneticxRV)
@@ -66,13 +68,25 @@ class Events : Fragment() {
     }
 
     fun onItemClick(item: Event_DataClass){
+        val bundle=Bundle()
+        bundle.putString("date" , item.date)
+        bundle.putString("details" , item.details)
+        bundle.putString("form" , item.form)
+        bundle.putString("name" , item.name)
+        bundle.putString("no" , item.no.toString())
+        bundle.putString("time" , item.time)
+        bundle.putString("url" , item.url)
+        bundle.putString("venue" , item.venue)
         val nextFragment = eventdetails()
+        nextFragment.arguments=bundle
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,nextFragment)
         transaction.commit()
     }
 
     private fun fetchFromFireStoreEvents(eventType: String, recyclerView: RecyclerView) {
+
+        ij.clear()
         // Fetch event data from Firestore for the specified event type
         db.collection(eventType)
             .get()
