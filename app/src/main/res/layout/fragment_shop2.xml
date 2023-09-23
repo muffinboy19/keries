@@ -38,12 +38,34 @@
             app:layout_constraintGuide_percent="0.05" />
 
             <ImageView
+                android:id="@+id/backBut"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/backsvg"
+                app:layout_constraintStart_toStartOf="@+id/leftGuide"
+                app:layout_constraintTop_toTopOf="@+id/topGuide" />
+
+            <TextView
+                android:id="@+id/shopText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="SHOP"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintStart_toEndOf="@id/backBut"
+                app:layout_constraintTop_toTopOf="@id/topGuide" />
+
+            <ImageView
                 android:id="@+id/shopImage"
                 android:layout_width="0dp"
                 android:layout_height="280dp"
                 android:paddingHorizontal="20dp"
                 android:src="@drawable/ic_launcher_background"
-                app:layout_constraintTop_toTopOf="@id/topGuide"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/shopText"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"/>
             
@@ -52,6 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Sample Text"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:paddingStart="8dp"
@@ -103,7 +126,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sample Text"
+                    android:text="Select Size"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:paddingStart="8dp"
@@ -118,35 +141,48 @@
                         android:paddingEnd="10dp"
                         android:fontFamily="@font/montserrat"
                         android:textColor="#FF4206"
-                        android:text="Sample Text"/>
+                        android:text="Size Chart"/>
                 </RelativeLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/l7"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buyMerch"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Buy Now"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#FFF"
+                android:background="@drawable/registerbutton"
+                app:layout_constraintStart_toEndOf="@id/leftGuide"
+                app:layout_constraintEnd_toEndOf="@id/rightGuide"
+                app:layout_constraintTop_toBottomOf="@id/l6"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/productDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/leftGuide"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@id/l6">
+                android:text="Product Description"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#FFF"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/buyMerch"
+                android:textSize="18sp"/>
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background"/>
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/productDescriptionText"
+                app:layout_constraintStart_toEndOf="@id/leftGuide"
+                app:layout_constraintEnd_toEndOf="@id/rightGuide"
+                app:layout_constraintTop_toBottomOf="@id/productDescription"
+                android:layout_marginTop="10dp"
+                android:textAlignment="textStart"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--    </androidx.core.widget.NestedScrollView>-->
