@@ -73,7 +73,7 @@ class Events : Fragment() {
         bundle.putString("details" , item.details)
         bundle.putString("form" , item.form)
         bundle.putString("name" , item.name)
-        bundle.putString("no" , item.no.toString())
+        bundle.putLong("no" , item.no)
         bundle.putString("time" , item.time)
         bundle.putString("url" , item.url)
         bundle.putString("venue" , item.venue)
@@ -81,6 +81,7 @@ class Events : Fragment() {
         nextFragment.arguments=bundle
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,nextFragment)
+        transaction.addToBackStack(null)
         transaction.commit()
     }
 

@@ -14,20 +14,22 @@ import org.w3c.dom.Text
 
 class eventdetails : Fragment() {
 
-    @SuppressLint("MissingInflatedId")
+//    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_eventdetails, container, false)
-
+        val root = inflater.inflate(R.layout.event_layout, container, false)
         val societyName = root.findViewById<TextView>(R.id.textView2)
         val eventName = root.findViewById<TextView>(R.id.textView)
         val eventDescription = root.findViewById<TextView>(R.id.descriptionEventTextView)
         val location = root.findViewById<TextView>(R.id.locationTextView)
         val time = root.findViewById<TextView>(R.id.TimeTextView)
         val image = root.findViewById<ImageView>(R.id.eventImage)
+
+//    Picasso.Builder().build()
+
 
         val date = arguments?.getString("date")
         val details = arguments?.getString("details")
@@ -51,9 +53,9 @@ class eventdetails : Fragment() {
         if(time!=null){
             time.text=timee
         }
-//        if(url!=null){
-//            Picasso.get().load(url).into(image)
-//        }
+        if(url!=null){
+            Picasso.get().load(url).into(image)
+        }
         return root
     }
 

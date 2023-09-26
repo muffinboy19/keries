@@ -2,10 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="409dp"
-    android:layout_height="729dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".fragments.Events">
-
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -84,9 +83,11 @@
                 android:id="@+id/eventImage"
                 android:layout_width="0dp"
                 android:layout_height="290dp"
+                android:src="@drawable/ic_launcher_background"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintTop_toBottomOf="@id/eventTextView"/>
+                app:layout_constraintTop_toTopOf="@id/topGuide"
+                android:layout_marginTop="50dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/register"
