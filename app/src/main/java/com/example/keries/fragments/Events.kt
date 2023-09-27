@@ -97,7 +97,7 @@ class Events : Fragment() {
                     val date = document.getString("date")?:""
                     val details = document.getString("details")?:""
                     val form = document.getString("form")?:""
-                    val  name = document.getString("name")?:""
+                    val name = document.getString("name")?:""
                     val no = document.getLong("no")?:0
                     val time = document.getString("time")?:""
                     val url = document.getString("url")?:""
