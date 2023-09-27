@@ -14,7 +14,6 @@ import org.w3c.dom.Text
 
 class eventdetails : Fragment() {
 
-//    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,9 +27,6 @@ class eventdetails : Fragment() {
         val time = root.findViewById<TextView>(R.id.TimeTextView)
         val image = root.findViewById<ImageView>(R.id.eventImage)
 
-//    Picasso.Builder().build()
-
-
         val date = arguments?.getString("date")
         val details = arguments?.getString("details")
         val form = arguments?.getString("form")
@@ -40,23 +36,13 @@ class eventdetails : Fragment() {
         val url = arguments?.getString("url")
         val venue = arguments?.getString("venue")
 
-        if(details!=null){
             eventDescription.text = details
-        }
-        if(name!=null){
             eventName.text = name
-        }
-        if(location!=null){
             location.text=venue
             time.text=timee
-        }
-        if(time!=null){
             time.text=timee
-        }
-        if(url!=null){
             Picasso.get().load(url).into(image)
-        }
+
         return root
     }
-
 }

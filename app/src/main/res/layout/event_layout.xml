@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".fragments.Events">
 
+    <TextView
+        android:id="@+id/eventTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="30dp"
+        android:elevation="1dp"
+        android:text="Events"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -55,29 +67,14 @@
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="10dp"
                 android:elevation="1dp"
+                android:textSize="18sp"
                 android:text="Society Name"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/eventTextView" />
-
-            <TextView
-                android:id="@+id/eventTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="240dp"
-                android:elevation="1dp"
-                android:text="Events"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toTopOf="@id/topGuide" />
+                app:layout_constraintTop_toBottomOf="@+id/eventImage" />
 
             <ImageView
                 android:id="@+id/eventImage"
@@ -93,7 +90,7 @@
                 android:id="@+id/register"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="#865CD0"
                 android:background="@drawable/registerbutton"
                 android:paddingHorizontal="3dp"
@@ -108,6 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:elevation="1dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto"
                 android:textColor="#FAFAFA"
                 android:textSize="24sp"
