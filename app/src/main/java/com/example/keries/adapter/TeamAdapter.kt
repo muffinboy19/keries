@@ -22,7 +22,6 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
         private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
         private val wingTextView: TextView = itemView.findViewById(R.id.desginations)
         private val imageView: ImageView = itemView.findViewById(R.id.imageView)
-        val shimmerLayout:ShimmerFrameLayout = itemView.findViewById(R.id.shimmer)
 
 
         fun bind(teamMember: TeamMember) {

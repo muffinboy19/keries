@@ -20,7 +20,7 @@ class sponser : Fragment() {
 
     private lateinit var sponsorRecyclerView: RecyclerView
     private lateinit var sponseradapter: SponsorAdapter
-    private val db = FirebaseFirestore.getInstance()
+//    private val db = FirebaseFirestore.getInstance()
     private  var SponserList : MutableList<sponserDataClass> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

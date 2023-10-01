@@ -52,8 +52,10 @@ class Shop : Fragment() {
         productRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         productRecyclerView.adapter = productadapter
 
-        // Fetch data from Firestore
-        fetchFirestoreData()
+        if(savedInstanceState==null) {
+            // Fetch data from Firestore
+            fetchFirestoreData()
+        }
     }
 
     fun onItemClick(item:productDataClass){
@@ -63,13 +65,16 @@ class Shop : Fragment() {
         bundle.putString("type" , item.productTypes)
         bundle.putString("descrip" , item.productDescription)
         bundle.putString("image" , item.productImageUrl)
+        bundle.putString("form",item.productForm)
         val nextFragment = Shop2()
         nextFragment.arguments=bundle
 
-        val transaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container,nextFragment)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        if(!isCurrentFragment(nextFragment)){
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container,nextFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
     }
 
     private fun fetchFirestoreData() {
@@ -85,7 +90,8 @@ class Shop : Fragment() {
                     val desccription = document.getString("desc") ?: ""
                     val prize = document.getString("cost") ?: ""
                     val url = document.getString("url") ?: ""
-                    val item = productDataClass(name, type, desccription, prize, url)
+                    val form = document.getString("form")?:""
+                    val item = productDataClass(name, type, desccription, prize, url,form)
                     productList.add(item)
                     shimmerFrameLayout.stopShimmer()
                     shimmerFrameLayout.isVisible =false
@@ -98,5 +104,11 @@ class Shop : Fragment() {
             .addOnFailureListener { exception ->
                 Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT).show()
             }
+    }
+
+    private fun isCurrentFragment(nextFragment: Fragment):Boolean {
+        val current = requireActivity().supportFragmentManager.findFragmentById(R.id.fragment_container)
+        return current !=null && current::class.java==nextFragment::class.java
+
     }
 }

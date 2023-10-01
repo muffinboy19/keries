@@ -1,6 +1,8 @@
 package com.example.keries.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatButton
 import com.example.keries.R
 import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore
@@ -26,6 +29,7 @@ class Shop2 : Fragment() {
         val merchName = rootView.findViewById<TextView>(R.id.textView1)
         val merchType = rootView.findViewById<TextView>(R.id.textView2)
         val merchDescription = rootView.findViewById<TextView>(R.id.productDescription)
+        val buyMerch = rootView.findViewById<AppCompatButton>(R.id.buyMerch)
         val boso = rootView.findViewById<ImageView>(R.id.backBut)
 
         boso.setOnClickListener{
@@ -37,6 +41,20 @@ class Shop2 : Fragment() {
         val type = arguments?.getString("type")
         val descrip = arguments?.getString("descrip")
         val image = arguments?.getString("image")
+        val formLink = arguments?.getString("form")
+
+        buyMerch.setOnClickListener{
+            if(!formLink.isNullOrBlank()){
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(formLink))
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(requireContext(), "Error while Loading link", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+
+
 
         merchName.text = name
         merchType.text = type

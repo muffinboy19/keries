@@ -6,4 +6,5 @@ data class productDataClass (
     val productDescription: String,
     val productPrize: String,
     val productImageUrl: String,
+    val productForm: String,
 )
