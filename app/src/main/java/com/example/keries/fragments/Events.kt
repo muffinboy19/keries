@@ -69,18 +69,19 @@ class Events : Fragment() {
 
     fun onItemClick(item: Event_DataClass){
         val bundle=Bundle()
-        bundle.putString("date" , item.date)
-        bundle.putString("details" , item.details)
-        bundle.putString("form" , item.form)
-        bundle.putString("name" , item.name)
-        bundle.putString("no" , item.no.toString())
-        bundle.putString("time" , item.time)
-        bundle.putString("url" , item.url)
-        bundle.putString("venue" , item.venue)
+        bundle.putString("date" , item.date?:"Date")
+        bundle.putString("details" , item.details?:"Details")
+        bundle.putString("form" , item.form?:"Form")
+        bundle.putString("name" , item.name?:"Name")
+        bundle.putLong("no" , item.no?:123)
+        bundle.putString("time" , item.time?:"Time")
+        bundle.putString("url" , item.url?:"Url")
+        bundle.putString("venue" , item.venue?:"Venue")
         val nextFragment = eventdetails()
         nextFragment.arguments=bundle
         val transaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container,nextFragment)
+        transaction.addToBackStack(null)
         transaction.commit()
     }
 
@@ -93,14 +94,14 @@ class Events : Fragment() {
             .addOnSuccessListener {
                 val showeventlist = mutableListOf<Event_DataClass>()
                 for (document in it) {
-                    val date = document.getString("name") ?: ""
-                    val details = document.getString("url") ?: ""
-                    val form = document.getString("url") ?: ""
-                    val name = document.getString("url") ?: ""
-                    val no = document.getLong("no") ?: 0
-                    val time = document.getString("url") ?: ""
-                    val url = document.getString("url") ?: ""
-                    val venue = document.getString("url") ?: ""
+                    val date = document.getString("date")?:""
+                    val details = document.getString("details")?:""
+                    val form = document.getString("form")?:""
+                    val name = document.getString("name")?:""
+                    val no = document.getLong("no")?:0
+                    val time = document.getString("time")?:""
+                    val url = document.getString("url")?:""
+                    val venue = document.getString("venue")?:""
                     showeventlist.add(
                         Event_DataClass(date, details, form, name, no, time, url, venue)
                     )

@@ -2,18 +2,33 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="409dp"
-    android:layout_height="729dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121010"
     tools:context=".fragments.Events">
 
+    <TextView
+        android:id="@+id/eventTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_gravity="top|center"
+        android:elevation="1dp"
+        android:text="Events"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:background="#121010">
 
             <androidx.constraintlayout.widget.Guideline
@@ -56,46 +71,33 @@
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="10dp"
                 android:elevation="1dp"
+                android:textSize="18sp"
                 android:text="Society Name"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/eventTextView" />
-
-            <TextView
-                android:id="@+id/eventTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="240dp"
-                android:elevation="1dp"
-                android:text="Events"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toTopOf="@id/topGuide" />
+                app:layout_constraintTop_toBottomOf="@+id/eventImage" />
 
             <ImageView
                 android:id="@+id/eventImage"
                 android:layout_width="0dp"
                 android:layout_height="290dp"
+                android:src="@drawable/ic_launcher_background"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintTop_toBottomOf="@id/eventTextView"/>
+                app:layout_constraintTop_toTopOf="@id/topGuide"
+                android:layout_marginTop="50dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/register"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginBottom="60dp"
                 android:backgroundTint="#865CD0"
                 android:background="@drawable/registerbutton"
                 android:paddingHorizontal="3dp"
+                android:layout_marginVertical="10dp"
                 android:text="Register"
                 android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
@@ -105,12 +107,13 @@
             <TextView
                 android:id="@+id/descriptionEventTextView"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:elevation="1dp"
+                android:layout_marginVertical="15dp"
                 android:fontFamily="@font/roboto"
                 android:textColor="#FAFAFA"
                 android:textSize="24sp"
-                android:text="Lorem ispum dlor sit "
+                android:text="Description"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/l3" />

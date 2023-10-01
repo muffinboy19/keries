@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.keries.R
 import com.example.keries.dataClass.TeamMember
+import com.facebook.shimmer.Shimmer
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class TeamAdapter(private val teamMembers: List<TeamMember>) :
     RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
@@ -31,6 +33,14 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
                 itemView.visibility = View.GONE
                 itemView.layoutParams = RecyclerView.LayoutParams(0, 0)
             }
+
+//            val shimmer = Shimmer.AlphaHighlightBuilder()
+//                .setDuration(3000)
+//                .setBaseAlpha(.7f)
+//                .setHighlightAlpha(.9f)
+//                .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
+//                .build()
+
             Glide.with(itemView.context)
                 .load(teamMember.url)
                 .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
@@ -69,6 +79,7 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         val teamMember = teamMembers[position]
         holder.bind(teamMember)
+//        holder.shimmerLayout.setShimmer()
     }
 
     override fun getItemCount(): Int {

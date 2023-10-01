@@ -19,8 +19,8 @@ class NotificationAdapter(private val notifications: List<NotificationModel>) :
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
-        val timestampTextView: TextView = itemView.findViewById(R.id.timestampTextView)
+//        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+//        val timestampTextView: TextView = itemView.findViewById(R.id.timestampTextView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,22 +32,22 @@ class NotificationAdapter(private val notifications: List<NotificationModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val notification = notifications[position]
         holder.titleTextView.text = notification.title
-        holder.timestampTextView.text = formatTimestamp(notification.timestamp)
+//        holder.timestampTextView.text = formatTimestamp(notification.timestamp)
 
         // Load image from URL using Glide or another image-loading library
-        Glide.with(holder.itemView)
-            .load(notification.imageUrl)
-            .placeholder(R.drawable.location_pin_svgrepo_com)
-            .into(holder.imageView)
+//        Glide.with(holder.itemView)
+//            .load(notification.imageUrl)
+//            .placeholder(R.drawable.location_pin_svgrepo_com)
+//            .into(holder.imageView)
     }
 
     override fun getItemCount(): Int {
         return notifications.size
     }
 
-    private fun formatTimestamp(timestamp: Long): String {
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
-        val date = Date(timestamp)
-        return dateFormat.format(date)
-    }
+//    private fun formatTimestamp(timestamp: Long): String {
+//        val dateFormat = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault())
+//        val date = Date(timestamp)
+//        return dateFormat.format(date)
+//    }
 }

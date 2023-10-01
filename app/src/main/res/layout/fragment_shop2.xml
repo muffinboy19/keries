@@ -165,14 +165,15 @@
                 android:id="@+id/productDescription"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/leftGuide"
-                app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                android:text="Product Description"
-                android:fontFamily="@font/montserrat"
-                android:textColor="#FFF"
                 android:layout_marginTop="15dp"
-                app:layout_constraintTop_toBottomOf="@id/buyMerch"
-                android:textSize="18sp"/>
+                android:fontFamily="@font/montserrat"
+                android:text="Product Description"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/rightGuide"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/leftGuide"
+                app:layout_constraintTop_toBottomOf="@id/buyMerch" />
 
             <TextView
                 android:layout_width="0dp"

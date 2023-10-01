@@ -29,10 +29,6 @@ class featuredEventsAdapter(private val items: List<FeaturedEventes>) :
     override fun onBindViewHolder(holder: FeaturedEventesViewHolder, position: Int) {
         val item = items[position]
         holder.bind(item)
-
-//        holder.itemView.setOnClickListener{
-//            itemClickListener.onItemClick(item)
-//        }
     }
 
     override fun getItemCount(): Int = items.size

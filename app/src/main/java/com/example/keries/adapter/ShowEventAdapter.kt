@@ -14,13 +14,9 @@ import com.example.keries.fragments.Events
 
 class ShowEventAdapter(private val showevents: List<Event_DataClass>, private val itemClickListener: Events) :
     RecyclerView.Adapter<ShowEventAdapter.ShowEventViewHolder>() {
-
-
-
     interface OnItemClickListener{
         fun OnItemClick(item: Event_DataClass)
     }
-
     inner class ShowEventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imageView: ImageView = itemView.findViewById(R.id.eventImageShow)
         fun bind(se: Event_DataClass) {
