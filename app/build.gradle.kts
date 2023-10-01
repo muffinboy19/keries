@@ -50,7 +50,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("com.firebaseui:firebase-ui-firestore:8.0.0")
     implementation("androidx.core:core-ktx:1.10.1")
-//    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("com.facebook.shimmer:shimmer:0.5.0@aar")
     implementation ("com.google.firebase:firebase-firestore:24.7.1")
     implementation ("androidx.recyclerview:recyclerview:1.3.1")
     implementation ("com.github.bumptech.glide:glide:4.15.1")

@@ -61,7 +61,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <include layout="@layout/shoplayolt_shimmer"/>
-                    <include layout="@layout/shoplayolt_shimmer"/>
                 </LinearLayout>
 
             </com.facebook.shimmer.ShimmerFrameLayout>

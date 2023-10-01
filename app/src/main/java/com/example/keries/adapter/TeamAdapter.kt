@@ -24,11 +24,12 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
 
         fun bind(teamMember: TeamMember) {
             nameTextView.text = teamMember.name
-            if(teamMember.no>42){
-                wingTextView.text = "EXECUTIVE"
-            }
-            else{
+            if(teamMember.no<42){
                 wingTextView.text = "HEAD"
+            }else {
+                // Hide the view for team members with no > 42
+                itemView.visibility = View.GONE
+                itemView.layoutParams = RecyclerView.LayoutParams(0, 0)
             }
             Glide.with(itemView.context)
                 .load(teamMember.url)
