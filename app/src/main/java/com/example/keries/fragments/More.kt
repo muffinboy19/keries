@@ -1,8 +1,6 @@
 package com.example.keries.fragments
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.airbnb.lottie.LottieAnimationView
 import com.example.keries.R
+import com.example.keries.fragments.developers
 
 class More : Fragment() {
     private lateinit var lottieDev: LottieAnimationView
@@ -46,17 +45,18 @@ class More : Fragment() {
 
         val dev = view.findViewById<LinearLayout>(R.id.Devs)
         dev.setOnClickListener {
+            loadFragment(developers())
             // Start the animation
-            lottieDev.visibility = View.VISIBLE
-            lottieDev.playAnimation()
+//            lottieDev.visibility = View.VISIBLE
+//            lottieDev.playAnimation()
 
             // Delay for a specified duration (e.g., 3000 milliseconds or 3 seconds)
-            val delayMillis = 3000L
-            Handler(Looper.getMainLooper()).postDelayed({
-                // Stop the animation after the delay
-                lottieDev.cancelAnimation()
-                lottieDev.visibility = View.GONE
-            }, delayMillis)
+//            val delayMillis = 3000L
+//            Handler(Looper.getMainLooper()).postDelayed({
+//                // Stop the animation after the delay
+//                lottieDev.cancelAnimation()
+//                lottieDev.visibility = View.GONE
+//            }, delayMillis)
         }
 
         toolText = requireActivity().findViewById(R.id.titleText)

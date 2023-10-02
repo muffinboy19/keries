@@ -111,39 +111,7 @@ class Team : Fragment() {
         fetchAndPopulateData("BRANDING & LOGISTICS", blrv)
         fetchAndPopulateData("CREATIVES", crerv)
         fetchAndPopulateData("HOSPITALITY & TRAVEL", hrv)
-
-
-//        val ii = mutableListOf<TeamMember>()
-//        teamAdapter = TeamAdapter(ii)
-//        Crv.adapter = teamAdapter
-//        fetchFirestoreDataForWing("Coordinator", Crv)
-//        fetchFirestoreDataForWing("FINANCE", frv)
-
     }
-
-//    private fun fetchFirestoreDataForWing(wing: String, recyclerView: RecyclerView) {
-//        db.collection("team")
-//            .whereEqualTo("wing", wing)
-//            .get()
-//            .addOnSuccessListener {
-//                val teamMemberList = mutableListOf<TeamMember>()
-//                for (document in it) {
-//                    val noString = document.get("no")?.toString() ?: ""
-//                    val no = noString.toIntOrNull() ?: 0
-//                    val name = document.getString("name") ?: ""
-//                    val url = document.getString("url") ?: ""
-//                    teamMemberList.add(TeamMember(name, wing, url,no))
-//                }
-//                teamAdapter = TeamAdapter(teamMemberList)
-//                recyclerView.layoutManager =
-//                    LinearLayoutManager(requireContext())// You need to define this constructor in your TeamAdapter class
-//                recyclerView.adapter = teamAdapter
-//
-//            }
-//            .addOnFailureListener {
-//                Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
-//            }
-//    }
     private fun fetchAndPopulateData(wing: String, recyclerView: RecyclerView) {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
