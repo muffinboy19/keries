@@ -21,4 +21,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:padding="16dp"/>
+
+<!--    no usage so delete it-->
 </LinearLayout>

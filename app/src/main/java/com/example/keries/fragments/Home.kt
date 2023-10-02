@@ -3,6 +3,7 @@ package com.example.keries.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,6 +52,17 @@ class Home : Fragment() {
         notificationButton.setOnClickListener {
             loadFragment(notification())
         }
+
+        object : CountDownTimer(35000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                Log.d("lpg", "onTick: I am hero")
+            }
+
+            override fun onFinish() {
+                Log.d("lpg", "Khatam ho gaya")
+            }
+        }.start()
+
 
     }
 
