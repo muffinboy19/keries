@@ -75,11 +75,11 @@
             android:id="@+id/linearLayout5"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/ripple1effect"
             app:layout_constraintEnd_toStartOf="@+id/rightguide"
             app:layout_constraintStart_toStartOf="@+id/leftguide"
-            app:layout_constraintTop_toBottomOf="@+id/textView5">
+            app:layout_constraintTop_toTopOf="@+id/upguide">
 
             <ImageView
                 android:layout_width="48dp"
@@ -217,16 +217,16 @@
         </LinearLayout>
 
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="MORE"
-            android:textColor="@color/white"
-            android:textSize="32dp"
-            app:layout_constraintStart_toStartOf="@+id/leftguide"
-            app:layout_constraintTop_toTopOf="@+id/upguide" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView5"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:fontFamily="@font/roboto_medium"-->
+<!--            android:text="MORE"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="32dp"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/leftguide"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/upguide" />-->
 
         <LinearLayout
             android:id="@+id/Devs"

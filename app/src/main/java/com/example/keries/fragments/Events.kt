@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +30,10 @@ class Events : Fragment() {
     private lateinit var InformalRv: RecyclerView
     private lateinit var MainStageRV: RecyclerView
     private  var ij : MutableList<Event_DataClass> = mutableListOf()
+    private lateinit var countdownTextView: TextView
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,6 +69,13 @@ class Events : Fragment() {
         fetchFromFireStoreEvents("Gaming", gamingRv)
         fetchFromFireStoreEvents("Informal", InformalRv)
         fetchFromFireStoreEvents("Main Stage", MainStageRV)
+
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "EVENTS"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setVisibility(View.GONE)
 
 
     }

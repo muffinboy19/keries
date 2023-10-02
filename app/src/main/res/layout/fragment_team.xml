@@ -35,27 +35,27 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.005" />
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="97dp"
-                android:layout_height="41dp"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/roboto_medium"
-                android:gravity="center_vertical"
-                android:text="Team"
-                android:textColor="@color/white"
-                android:textSize="34sp"
-                app:layout_constraintStart_toEndOf="@+id/backteam"
-                app:layout_constraintTop_toTopOf="@+id/upguide" />
+<!--            <TextView-->
+<!--                android:id="@+id/textView15"-->
+<!--                android:layout_width="97dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:fontFamily="@font/roboto_medium"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:text="Team"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="34sp"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/backteam"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/upguide" />-->
 
-            <ImageView
-                android:id="@+id/backteam"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="5dp"
-                android:src="@drawable/backsvg"
-                app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toTopOf="@+id/upguide" />
+<!--            <ImageView-->
+<!--                android:id="@+id/backteam"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:padding="5dp"-->
+<!--                android:src="@drawable/backsvg"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/leftguide"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/upguide" />-->
 
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="55dp"
                 android:fontFamily="@font/montserrat"
                 android:text="coordinator"
                 android:textAllCaps="true"
@@ -72,7 +72,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@id/festiveCordi"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@id/backteam" />
+                app:layout_constraintTop_toBottomOf="@id/upguide" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/festiveCordi"

@@ -18,6 +18,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 
 class Shop2 : Fragment() {
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,9 +33,16 @@ class Shop2 : Fragment() {
         val merchType = rootView.findViewById<TextView>(R.id.textView2)
         val merchDescription = rootView.findViewById<TextView>(R.id.productDescription)
         val buyMerch = rootView.findViewById<AppCompatButton>(R.id.buyMerch)
-        val boso = rootView.findViewById<ImageView>(R.id.backBut)
 
-        boso.setOnClickListener{
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "Shop"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setVisibility(View.VISIBLE)
+
+        logoTool.setOnClickListener{
             requireActivity().supportFragmentManager.popBackStack()
         }
 

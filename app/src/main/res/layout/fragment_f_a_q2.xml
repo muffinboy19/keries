@@ -38,15 +38,15 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="FAQ"
-            android:textColor="@color/white"
-            android:textSize="28sp"
-            app:layout_constraintStart_toEndOf="@+id/boso"
-            app:layout_constraintTop_toTopOf="@+id/topGuide" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="FAQ"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="28sp"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/boso"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/topGuide" />-->
 
         <LinearLayout
             android:id="@+id/l1"
@@ -370,14 +370,14 @@
                 android:visibility="gone" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/boso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/backsvg"
-            app:layout_constraintStart_toStartOf="@+id/leftGuide"
-            app:layout_constraintTop_toTopOf="@+id/topGuide" />
+<!--        <ImageView-->
+<!--            android:id="@+id/boso"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:src="@drawable/backsvg"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/leftGuide"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/topGuide" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
@@ -28,6 +29,9 @@ class Home : Fragment() {
     private  var FeaturedEventsList  : MutableList<FeaturedEventes> = mutableListOf()
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var countdownTextView: TextView
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +43,8 @@ class Home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        toolbar = view.findViewById(R.id.toolbarView)
+//        toolbar.title = "EFFERVESCENC'23"
 
         FeaturedEventRecylerView = view.findViewById(R.id.FeaturedEventRecylerView)
         featuredEventsAdapter = featuredEventsAdapter(FeaturedEventsList)
@@ -48,20 +54,17 @@ class Home : Fragment() {
         fetchSystemDateTime()
         fetchFirestoreData()
 
-        val notificationButton = view.findViewById<ImageView>(R.id.notificationbutton)
-        notificationButton.setOnClickListener {
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "EFFERVESCENCE'23"
+        notifyTool.setVisibility(View.VISIBLE)
+        logoTool.setVisibility(View.VISIBLE)
+        logoTool.setImageResource(R.drawable.bluevg)
+
+        notifyTool.setOnClickListener {
             loadFragment(notification())
         }
-
-        object : CountDownTimer(35000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                Log.d("lpg", "onTick: I am hero")
-            }
-
-            override fun onFinish() {
-                Log.d("lpg", "Khatam ho gaya")
-            }
-        }.start()
 
 
     }

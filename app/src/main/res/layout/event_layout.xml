@@ -7,18 +7,18 @@
     android:background="@drawable/background0"
     tools:context=".fragments.Events">
 
-    <TextView
-        android:id="@+id/eventTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_gravity="top|center"
-        android:elevation="1dp"
-        android:text="Events"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
+<!--    <TextView-->
+<!--        android:id="@+id/eventTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:layout_gravity="top|center"-->
+<!--        android:elevation="1dp"-->
+<!--        android:text="Events"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"/>-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

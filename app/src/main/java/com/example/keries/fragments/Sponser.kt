@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,9 @@ class sponser : Fragment() {
     private lateinit var sponseradapter: SponsorAdapter
 //    private val db = FirebaseFirestore.getInstance()
     private  var SponserList : MutableList<sponserDataClass> = mutableListOf()
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,8 +39,15 @@ class sponser : Fragment() {
 
         sponsorRecyclerView = view.findViewById(R.id.sponserRecylerView)
 
-        val backbutton = view.findViewById<ImageView>(R.id.backsponser)
-        backbutton.setOnClickListener {
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "Sponsers"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setVisibility(View.VISIBLE)
+
+        logoTool.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
         sponseradapter = SponsorAdapter(SponserList)

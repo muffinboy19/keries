@@ -37,16 +37,16 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.05"/>
 
-            <TextView
-                android:id="@+id/eventText"
-                android:layout_width="wrap_content"
-                android:layout_height="41dp"
-                android:fontFamily="@font/roboto_medium"
-                app:layout_constraintTop_toTopOf="@id/topGuide"
-                app:layout_constraintStart_toStartOf="@id/leftGuide"
-                android:text="Event"
-                android:textColor="@color/white"
-                android:textSize="32sp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/eventText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:fontFamily="@font/roboto_medium"-->
+<!--                app:layout_constraintTop_toTopOf="@id/topGuide"-->
+<!--                app:layout_constraintStart_toStartOf="@id/leftGuide"-->
+<!--                android:text="Event"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="32sp"/>-->
 
             <TextView
                 android:id="@+id/nirmitiText"
@@ -55,10 +55,10 @@
                 android:text="Nirmiti"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="40dp"
                 android:fontFamily="@font/montserrat"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/eventText"/>
+                app:layout_constraintTop_toBottomOf="@+id/topGuide"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/nimritiRV"

@@ -17,6 +17,9 @@ import com.squareup.picasso.Picasso
 import org.w3c.dom.Text
 
 class eventdetails : Fragment() {
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +61,13 @@ class eventdetails : Fragment() {
         time.text=timee
         time.text=timee
         Picasso.get().load(url).into(image)
+
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "EVENTS"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setVisibility(View.GONE)
 
         return root
     }

@@ -86,6 +86,9 @@ class FAQ : Fragment() {
     private val buttonStates = mutableMapOf<ImageView, Boolean>()
     // Set the initial drop-down height
     private val dropHeight = 500
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -97,6 +100,15 @@ class FAQ : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "FAQ"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setVisibility(View.VISIBLE)
+
 
         // Initialize UI elements
         val d1 = view.findViewById<ImageView>(R.id.d1)
@@ -113,8 +125,8 @@ class FAQ : Fragment() {
         val a6 = view.findViewById<TextView>(R.id.a6)
 
         // Initialize the return button
-        val retw = view.findViewById<ImageView>(R.id.boso)
-        retw.setOnClickListener {
+//        val retw = view.findViewById<ImageView>(R.id.boso)
+        logoTool.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
 

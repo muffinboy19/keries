@@ -6,11 +6,57 @@
     android:layout_height="match_parent"
     android:background="@drawable/background0">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/transparent"
+        android:paddingTop="10dp"
+        android:elevation="20dp"
+        android:outlineSpotShadowColor="@color/black">
+
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/bluevg" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Effervescence'23"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/notifyLogo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/baseline_notifications_24" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_alignBottom="@+id/toolbarView"/>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomNavigationView"
+        android:layout_below="@id/toolbarView"
         android:layout_marginBottom="0dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -20,7 +66,15 @@
         app:itemTextColor="@color/red"
         app:itemIconTint="@color/bottom_nav_icon_tint"
         style="@style/AppBottomNavigationView"
+        android:elevation="20dp"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:layout_alignTop="@+id/bottomNavigationView"/>
 
 </RelativeLayout>

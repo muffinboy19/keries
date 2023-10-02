@@ -38,40 +38,40 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.05" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="161dp"
-                android:layout_height="41dp"
-                android:layout_marginStart="24dp"
-                android:fontFamily="@font/montserrat"
-                android:gravity="top"
-                android:textStyle="bold"
-                android:text="Sponsors"
-                android:textColor="@color/white"
-                android:textSize="34sp"
-                app:layout_constraintStart_toEndOf="@+id/backsponser"
-                app:layout_constraintTop_toTopOf="@+id/upguide" />
+<!--            <TextView-->
+<!--                android:id="@+id/textView3"-->
+<!--                android:layout_width="161dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_marginStart="24dp"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:gravity="top"-->
+<!--                android:textStyle="bold"-->
+<!--                android:text="Sponsors"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="34sp"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/backsponser"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/upguide" />-->
 
-            <ImageView
-                android:id="@+id/backsponser"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/backsvg"
-                app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toTopOf="@+id/upguide" />
+<!--            <ImageView-->
+<!--                android:id="@+id/backsponser"-->
+<!--                android:layout_width="28dp"-->
+<!--                android:layout_height="28dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:src="@drawable/backsvg"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/leftguide"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/upguide" />-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sponserRecylerView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="55dp"
                 android:layout_marginBottom="24dp"
                 android:paddingBottom="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+                app:layout_constraintTop_toBottomOf="@+id/upguide"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

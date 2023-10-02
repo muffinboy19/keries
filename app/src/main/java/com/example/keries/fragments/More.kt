@@ -7,12 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import com.airbnb.lottie.LottieAnimationView
 import com.example.keries.R
 
 class More : Fragment() {
     private lateinit var lottieDev: LottieAnimationView
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,6 +58,13 @@ class More : Fragment() {
                 lottieDev.visibility = View.GONE
             }, delayMillis)
         }
+
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "MORE"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setVisibility(View.GONE)
     }
 
     private fun loadFragment(fragment: Fragment) {

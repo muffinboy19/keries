@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +25,9 @@ class Shop : Fragment() {
     private val db = FirebaseFirestore.getInstance()
     private  var productList : MutableList<productDataClass> = mutableListOf()
     private lateinit var shimmerFrameLayout:ShimmerFrameLayout
+    private lateinit var toolText : TextView
+    private lateinit var logoTool : ImageView
+    private lateinit var notifyTool : ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +43,7 @@ class Shop : Fragment() {
             .setAutoStart(true)
             .build()
         shimmerFrameLayout.setShimmer(shimmer)
+
         return root
     }
 
@@ -51,6 +57,13 @@ class Shop : Fragment() {
         // Set the layout manager and adapter for the RecyclerView
         productRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         productRecyclerView.adapter = productadapter
+
+        toolText = requireActivity().findViewById(R.id.titleText)
+        notifyTool = requireActivity().findViewById(R.id.notifyLogo)
+        logoTool = requireActivity().findViewById(R.id.logoView)
+        toolText.text = "SHOP"
+        notifyTool.setVisibility(View.GONE)
+        logoTool.setVisibility(View.GONE)
 
         if(savedInstanceState==null) {
             // Fetch data from Firestore
