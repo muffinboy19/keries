@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.ShowEventAdapter
 import com.example.keries.dataClass.Event_DataClass
-import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Events : Fragment() {
@@ -28,7 +27,6 @@ class Events : Fragment() {
     private lateinit var amsRV: RecyclerView
     private lateinit var gamingRv: RecyclerView
     private lateinit var InformalRv: RecyclerView
-    private lateinit var MainStageRV: RecyclerView
     private  var ij : MutableList<Event_DataClass> = mutableListOf()
     private lateinit var countdownTextView: TextView
     private lateinit var toolText : TextView
@@ -54,7 +52,6 @@ class Events : Fragment() {
         geneticxRV = view.findViewById(R.id.geneticxRV)
         gamingRv = view.findViewById(R.id.gamingRv)
         InformalRv = view.findViewById(R.id.InformalRv)
-        MainStageRV = view.findViewById(R.id.MainStageRV)
         amsRV = view.findViewById(R.id.amsRV)
 
         // Initialize and populate RecyclerViews with event data
@@ -82,7 +79,7 @@ class Events : Fragment() {
     fun onItemClick(item: Event_DataClass){
         val bundle=Bundle()
         bundle.putString("date" , item.date?:"Date")
-        bundle.putString("details" , item.details?:"Details")
+        bundle.putString("details" , item.details)
         bundle.putString("form" , item.form?:"Form")
         bundle.putString("name" , item.name?:"Name")
         bundle.putLong("no" , item.no?:123)
@@ -123,6 +120,8 @@ class Events : Fragment() {
                 showEventAdapter = ShowEventAdapter(showeventlist, this)
                 recyclerView.layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//                recyclerView.layoutManager = CustomLayoutManager(requireContext())
+//                recyclerView.itemAnimator  = CustomItemAnimator()
                 recyclerView.adapter = showEventAdapter
             }
             .addOnFailureListener {

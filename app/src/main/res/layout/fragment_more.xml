@@ -72,7 +72,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
+            android:id="@+id/AboutUsss"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginTop="150dp"
@@ -130,34 +130,6 @@
         </LinearLayout>
 
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="48dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:background="@drawable/background2"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/FAQ">-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="48dp"-->
-<!--                android:layout_height="48dp"-->
-<!--                android:layout_weight="0"-->
-<!--                android:padding="12dp"-->
-<!--                android:src="@drawable/singoutsvg" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_weight="1"-->
-<!--                android:fontFamily="@font/roboto"-->
-<!--                android:gravity="center_vertical"-->
-<!--                android:paddingStart="8dp"-->
-<!--                android:text="Sign Out"-->
-<!--                android:textColor="#FF4206"-->
-<!--                android:textSize="20sp" />-->
-<!--        </LinearLayout>-->
-
         <LinearLayout
             android:id="@+id/SPONS"
             android:layout_width="0dp"
@@ -195,7 +167,7 @@
             android:background="@drawable/ripple1effect"
             app:layout_constraintEnd_toEndOf="@id/rightguide"
             app:layout_constraintStart_toStartOf="@id/leftguide"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+            app:layout_constraintTop_toBottomOf="@+id/AboutUsss">
 
             <ImageView
                 android:layout_width="48dp"
@@ -264,6 +236,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="false"

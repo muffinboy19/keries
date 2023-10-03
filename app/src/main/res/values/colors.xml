@@ -4,6 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
 
+    <color name="primary">#1E1B1C</color>
+    <color name="secondary">#C41556</color>
+
     <color name="sustem">#000000</color>
     <color name="transparent">#00000000</color>
     <color name="shimer">#BFBDBD</color>

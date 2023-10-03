@@ -42,6 +42,11 @@ class More : Fragment() {
         SPONSER.setOnClickListener {
             loadFragment(sponser())
         }
+        val AboutUs = view.findViewById<LinearLayout>(R.id.AboutUsss)
+        SPONSER.setOnClickListener {
+            loadFragment(sponser())
+        }
+
 
         val dev = view.findViewById<LinearLayout>(R.id.Devs)
         dev.setOnClickListener {
