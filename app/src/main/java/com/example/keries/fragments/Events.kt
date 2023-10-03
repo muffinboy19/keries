@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.ShowEventAdapter
 import com.example.keries.dataClass.Event_DataClass
-import com.example.keries.dataClass.productDataClass
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Events : Fragment() {
@@ -78,7 +77,7 @@ class Events : Fragment() {
     fun onItemClick(item: Event_DataClass){
         val bundle=Bundle()
         bundle.putString("date" , item.date?:"Date")
-        bundle.putString("details" , item.details?:"Details")
+        bundle.putString("details" , item.details)
         bundle.putString("form" , item.form?:"Form")
         bundle.putString("name" , item.name?:"Name")
         bundle.putLong("no" , item.no?:123)
@@ -119,6 +118,8 @@ class Events : Fragment() {
                 showEventAdapter = ShowEventAdapter(showeventlist, this)
                 recyclerView.layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//                recyclerView.layoutManager = CustomLayoutManager(requireContext())
+//                recyclerView.itemAnimator  = CustomItemAnimator()
                 recyclerView.adapter = showEventAdapter
             }
             .addOnFailureListener {

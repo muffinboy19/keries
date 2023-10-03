@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
                 android:text="Day          Hours       miniutes      seconds"
-                android:textColor="#ff0000"
+                android:textColor="#0000ff"
                 app:layout_constraintEnd_toStartOf="@+id/rightGuide"
                 app:layout_constraintStart_toStartOf="@+id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
