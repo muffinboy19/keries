@@ -8,13 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
-import com.airbnb.lottie.LottieAnimationView
 import com.example.keries.R
-import com.example.keries.fragments.developers
 
 class More : Fragment() {
-    private lateinit var lottieDev: LottieAnimationView
     private lateinit var toolText : TextView
     private lateinit var logoTool : ImageView
     private lateinit var notifyTool : ImageView
@@ -22,14 +18,11 @@ class More : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_more, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        lottieDev = view.findViewById(R.id.lottieAnimationView)
         val FAQ = view.findViewById<LinearLayout>(R.id.FAQ)
         FAQ.setOnClickListener {
             loadFragment(FAQ())
@@ -42,21 +35,13 @@ class More : Fragment() {
         SPONSER.setOnClickListener {
             loadFragment(sponser())
         }
-
+        val ABOUT = view.findViewById<LinearLayout>(R.id.linearLayout5)
+        ABOUT.setOnClickListener {
+            loadFragment(about())
+        }
         val dev = view.findViewById<LinearLayout>(R.id.Devs)
         dev.setOnClickListener {
             loadFragment(developers())
-            // Start the animation
-//            lottieDev.visibility = View.VISIBLE
-//            lottieDev.playAnimation()
-
-            // Delay for a specified duration (e.g., 3000 milliseconds or 3 seconds)
-//            val delayMillis = 3000L
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                // Stop the animation after the delay
-//                lottieDev.cancelAnimation()
-//                lottieDev.visibility = View.GONE
-//            }, delayMillis)
         }
 
         toolText = requireActivity().findViewById(R.id.titleText)

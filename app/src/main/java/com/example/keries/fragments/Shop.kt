@@ -24,7 +24,6 @@ class Shop : Fragment() {
     private lateinit var productadapter: productAdapter
     private val db = FirebaseFirestore.getInstance()
     private  var productList : MutableList<productDataClass> = mutableListOf()
-    private lateinit var shimmerFrameLayout:ShimmerFrameLayout
     private lateinit var toolText : TextView
     private lateinit var logoTool : ImageView
     private lateinit var notifyTool : ImageView
@@ -35,15 +34,6 @@ class Shop : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val root = inflater.inflate(R.layout.fragment_shop, container, false)
-        shimmerFrameLayout= root.findViewById(R.id.shimmer)
-
-        val shimmer = Shimmer.AlphaHighlightBuilder()
-            .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
-            .setDuration(3000)
-            .setAutoStart(true)
-            .build()
-        shimmerFrameLayout.setShimmer(shimmer)
-
         return root
     }
 
@@ -106,9 +96,6 @@ class Shop : Fragment() {
                     val form = document.getString("form")?:""
                     val item = productDataClass(name, type, desccription, prize, url,form)
                     productList.add(item)
-                    shimmerFrameLayout.stopShimmer()
-                    shimmerFrameLayout.isVisible =false
-                    productRecyclerView.isVisible = true
                 }
 
                 // Notify the adapter that the data set has changed

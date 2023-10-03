@@ -28,7 +28,6 @@ class Events : Fragment() {
     private lateinit var amsRV: RecyclerView
     private lateinit var gamingRv: RecyclerView
     private lateinit var InformalRv: RecyclerView
-    private lateinit var MainStageRV: RecyclerView
     private  var ij : MutableList<Event_DataClass> = mutableListOf()
     private lateinit var countdownTextView: TextView
     private lateinit var toolText : TextView
@@ -54,7 +53,6 @@ class Events : Fragment() {
         geneticxRV = view.findViewById(R.id.geneticxRV)
         gamingRv = view.findViewById(R.id.gamingRv)
         InformalRv = view.findViewById(R.id.InformalRv)
-        MainStageRV = view.findViewById(R.id.MainStageRV)
         amsRV = view.findViewById(R.id.amsRV)
 
         // Initialize and populate RecyclerViews with event data
@@ -75,8 +73,6 @@ class Events : Fragment() {
         toolText.text = "EVENTS"
         notifyTool.setVisibility(View.GONE)
         logoTool.setVisibility(View.GONE)
-
-
     }
 
     fun onItemClick(item: Event_DataClass){

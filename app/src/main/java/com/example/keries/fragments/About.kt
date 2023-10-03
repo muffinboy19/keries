@@ -1,51 +1,44 @@
 package com.example.keries.fragments
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.airbnb.lottie.LottieAnimationView
+import androidx.fragment.app.Fragment
 import com.example.keries.R
 
-class developers : Fragment() {
+class about : Fragment() {
+    private lateinit var text : TextView
     private lateinit var toolText : TextView
     private lateinit var logoTool : ImageView
     private lateinit var notifyTool : ImageView
-    private lateinit var lottieDev: LottieAnimationView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_developers, container, false)
+        return inflater.inflate(R.layout.fragment_about, container, false)
+    }
 
-        lottieDev = root.findViewById(R.id.lottieAnimationView)
-        lottieDev.visibility = View.VISIBLE
-            lottieDev.playAnimation()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-//         Delay for a specified duration (e.g., 3000 milliseconds or 3 seconds)
-            val delayMillis = 3000L
-            Handler(Looper.getMainLooper()).postDelayed({
-                // Stop the animation after the delay
-                lottieDev.cancelAnimation()
-                lottieDev.visibility = View.GONE
-            }, delayMillis)
-        
         toolText = requireActivity().findViewById(R.id.titleText)
         notifyTool = requireActivity().findViewById(R.id.notifyLogo)
         logoTool = requireActivity().findViewById(R.id.logoView)
-        toolText.text = "Developers"
+        toolText.text = "About us"
         notifyTool.setVisibility(View.GONE)
         logoTool.setImageResource(R.drawable.backsvg)
         logoTool.setVisibility(View.VISIBLE)
+
         logoTool.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
-        return root
+
+        text = view.findViewById(R.id.aboutText)
+        text.text = "Nationally acknowledged for its array of unforgettable evenings, EFFERVESCENCE is the once in a year cultural epitome of IIITA illuminating the essence and ethos of IIITA witnessing a footfall of 21k+ per year.Effervesence has made a name for itself for the phenomenally successful online versions of the fest due to generous views and comments during the talk shows, comedy gigs and body-grooving musical performances. Each event reaches a different ke audience segment and provides a fun, entertaining and engaging way to wow the audience."
+
     }
 }

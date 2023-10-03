@@ -60,26 +60,25 @@
 
             <TextView
                 android:id="@+id/coordinator"
-                android:layout_width="159dp"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
                 android:text="coordinator"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/festiveCordi"
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@id/upguide" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/festiveCordi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toTopOf="@id/finance"
                 app:layout_constraintEnd_toStartOf="@+id/rightguide"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
@@ -87,50 +86,48 @@
 
             <TextView
                 android:id="@+id/finance"
-                android:layout_width="159dp"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="225dp"
                 android:fontFamily="@font/montserrat"
                 android:text="finance"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/financerelcyler"
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@id/festiveCordi" />
+                app:layout_constraintTop_toBottomOf="@id/coordinator" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/financerelcyler"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toTopOf="@id/eventsnmange"
                 app:layout_constraintEnd_toStartOf="@+id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
                 app:layout_constraintTop_toBottomOf="@id/finance" />
 
             <TextView
                 android:id="@+id/eventsnmange"
-                android:layout_width="159dp"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="225dp"
                 android:layout_marginBottom="200dp"
                 android:fontFamily="@font/montserrat"
                 android:text="Events &amp; Mangement"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/eventsnmange"
+                app:layout_constraintEnd_toStartOf="@id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@id/financerelcyler" />
+                app:layout_constraintTop_toBottomOf="@id/finance" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventesmangereycl"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -140,7 +137,7 @@
 
             <TextView
                 android:id="@+id/corporaterelations"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -150,9 +147,9 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/coroprate"
+                app:layout_constraintTop_toBottomOf="@id/eventesmangereycl"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toBottomOf="@id/eventesmangereycl" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/coroprate"
@@ -166,7 +163,7 @@
 
             <TextView
                 android:id="@+id/publicrealations"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -176,7 +173,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/pr"
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
                 app:layout_constraintTop_toBottomOf="@id/coroprate" />
 
@@ -192,7 +189,7 @@
 
             <TextView
                 android:id="@+id/branding"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_alignParentLeft="true"
@@ -203,8 +200,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-
-                app:layout_constraintBottom_toTopOf="@id/brnding"
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
                 app:layout_constraintTop_toBottomOf="@id/pr"
                 tools:layout_editor_absoluteX="21dp"
                 tools:layout_editor_absoluteY="283dp" />
@@ -222,7 +218,7 @@
 
             <TextView
                 android:id="@+id/hospitatltiy"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_alignParentLeft="true"
@@ -233,10 +229,8 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/hospitalllty"
-                app:layout_constraintTop_toBottomOf="@id/brnding"
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="318dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
+                app:layout_constraintTop_toBottomOf="@id/brnding"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/hospitalllty"
@@ -251,22 +245,19 @@
 
             <TextView
                 android:id="@+id/media"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-
                 android:fontFamily="@font/montserrat"
                 android:text="Media"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/mediaaaa"
-                app:layout_constraintTop_toBottomOf="@id/hospitalllty"
-                tools:layout_editor_absoluteX="32dp"
-                tools:layout_editor_absoluteY="357dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
+                app:layout_constraintTop_toBottomOf="@id/hospitalllty" />
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -283,7 +274,7 @@
             <TextView
                 android:id="@+id/filming"
                 android:layout_marginTop="24dp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -293,11 +284,8 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-
-                app:layout_constraintBottom_toTopOf="@id/flimingdevven"
-                app:layout_constraintTop_toBottomOf="@id/mediaaaa"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="388dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
+                app:layout_constraintTop_toBottomOf="@id/mediaaaa" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/flimingdevven"
@@ -312,9 +300,8 @@
 
             <TextView
                 android:id="@+id/creatives"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_marginTop="24dp"
-
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -322,13 +309,10 @@
                 android:text="creatives"
                 android:textAllCaps="true"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/creativesreyc"
-                app:layout_constraintTop_toBottomOf="@id/flimingdevven"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="411dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
+                app:layout_constraintTop_toBottomOf="@id/flimingdevven"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/creativesreyc"
@@ -337,14 +321,11 @@
                 android:layout_width="0dp"
                 android:layout_marginTop="8dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@id/technical"
-                app:layout_constraintTop_toBottomOf="@id/creatives"
-                tools:layout_editor_absoluteX="-13dp"
-                tools:layout_editor_absoluteY="616dp" />
+                app:layout_constraintTop_toBottomOf="@id/creatives" />
 
             <TextView
                 android:id="@+id/technical"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
                 android:layout_marginTop="24dp"
                 android:layout_height="24dp"
@@ -355,10 +336,8 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/tecnialreycler"
-                app:layout_constraintTop_toBottomOf="@id/creativesreyc"
-                tools:layout_editor_absoluteX="137dp"
-                tools:layout_editor_absoluteY="259dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
+                app:layout_constraintTop_toBottomOf="@id/creativesreyc"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tecnialreycler"
@@ -373,7 +352,7 @@
 
             <TextView
                 android:id="@+id/weboperations"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
                 android:layout_marginTop="24dp"
@@ -385,8 +364,7 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintTop_toBottomOf="@id/tecnialreycler"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="455dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"/>
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -401,21 +379,19 @@
 
             <TextView
                 android:id="@+id/appi"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:fontFamily="@font/montserrat"
                 android:text="App operations"
                 android:textAllCaps="true"
-                app:layout_constraintBottom_toTopOf="@id/apppp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
+                app:layout_constraintEnd_toEndOf="@id/rightguide"
                 android:layout_marginTop="24dp"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintTop_toBottomOf="@id/wed"
-                tools:layout_editor_absoluteX="167dp"
-                tools:layout_editor_absoluteY="283dp" />
+                app:layout_constraintTop_toBottomOf="@id/wed"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/apppp"
@@ -430,7 +406,7 @@
 
             <TextView
                 android:id="@+id/ooc"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -442,8 +418,7 @@
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
                 app:layout_constraintTop_toBottomOf="@id/apppp"
-                tools:layout_editor_absoluteX="220dp"
-                tools:layout_editor_absoluteY="125dp" />
+                app:layout_constraintEnd_toEndOf="@id/rightguide"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cco"

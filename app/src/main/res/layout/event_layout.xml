@@ -63,8 +63,7 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
-                app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                android:layout_marginRight="165dp"/>
+                app:layout_constraintEnd_toEndOf="@id/rightGuide"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -77,16 +76,18 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/eventImage" />
+                app:layout_constraintTop_toBottomOf="@+id/eventImage"
+                app:layout_constraintEnd_toEndOf="@id/rightGuide"/>
 
             <ImageView
                 android:id="@+id/eventImage"
                 android:layout_width="0dp"
                 android:layout_height="290dp"
+                android:layout_marginTop="25dp"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintTop_toTopOf="@id/topGuide"/>
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/register"
