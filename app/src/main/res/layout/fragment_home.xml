@@ -100,12 +100,13 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/FeaturedEventRecylerView"
-                android:layout_width="300dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/rightGuide"
+                app:layout_constraintStart_toStartOf="@id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
 
             <TextView

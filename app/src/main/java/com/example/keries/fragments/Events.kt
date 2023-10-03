@@ -68,7 +68,6 @@ class Events : Fragment() {
         fetchFromFireStoreEvents("Music", virtuosiRV)
         fetchFromFireStoreEvents("Gaming", gamingRv)
         fetchFromFireStoreEvents("Informal", InformalRv)
-        fetchFromFireStoreEvents("Main Stage", MainStageRV)
 
         toolText = requireActivity().findViewById(R.id.titleText)
         notifyTool = requireActivity().findViewById(R.id.notifyLogo)

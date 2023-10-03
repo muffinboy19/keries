@@ -38,8 +38,8 @@ class featuredEventsAdapter(private val items: List<FeaturedEventes>) :
         private val imageOfEvent  = itemView.findViewById<ImageView>(R.id.featuredEventImageView)
         private val titleOfEvent = itemView.findViewById<TextView>(R.id.featuredEventTitle)
         fun bind(featuredEventes: FeaturedEventes) {
-            titleOfEvent.text = featuredEventes.EventTitle
-            Glide.with(itemView.context).load(featuredEventes.EventImageUrl).into(imageOfEvent)
+            titleOfEvent.text = featuredEventes.name
+            Glide.with(itemView.context).load(featuredEventes.url).into(imageOfEvent)
         }
     }
 }

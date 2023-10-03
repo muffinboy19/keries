@@ -10,11 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
+import com.example.keries.adapter.ShowEventAdapter
 import com.example.keries.adapter.featuredEventsAdapter
+import com.example.keries.dataClass.Event_DataClass
 import com.example.keries.dataClass.FeaturedEventes
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
@@ -32,6 +35,7 @@ class Home : Fragment() {
     private lateinit var toolText : TextView
     private lateinit var logoTool : ImageView
     private lateinit var notifyTool : ImageView
+    private val db = FirebaseFirestore.getInstance()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,12 +43,8 @@ class Home : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        toolbar = view.findViewById(R.id.toolbarView)
-//        toolbar.title = "EFFERVESCENC'23"
 
         FeaturedEventRecylerView = view.findViewById(R.id.FeaturedEventRecylerView)
         featuredEventsAdapter = featuredEventsAdapter(FeaturedEventsList)
@@ -52,7 +52,9 @@ class Home : Fragment() {
         FeaturedEventRecylerView.adapter = featuredEventsAdapter
         countdownTextView = view.findViewById(R.id.countdownTextView)
         fetchSystemDateTime()
-        fetchFirestoreData()
+
+//        featuredEventsAdapter = featuredEventsAdapter(FeaturedEventsList)
+//        fetchFromFireStoreEvents("Main Stage", FeaturedEventRecylerView)
 
         toolText = requireActivity().findViewById(R.id.titleText)
         notifyTool = requireActivity().findViewById(R.id.notifyLogo)
@@ -65,27 +67,24 @@ class Home : Fragment() {
         notifyTool.setOnClickListener {
             loadFragment(notification())
         }
-
-
     }
 
-    private fun fetchFirestoreData() {
-        val db = FirebaseFirestore.getInstance()
-        db.collection("items")
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val title = document.getString("title") ?: ""
-                    val imageUrl = document.getString("imageUrl") ?: ""
-                    val item = FeaturedEventes(title, imageUrl)
-                    FeaturedEventsList.add(item)
-                }
-                featuredEventsAdapter.notifyDataSetChanged()
-            }
-            .addOnFailureListener { exception ->
-
-            }
-    }
+//    private fun fetchFirestoreData() {
+//        db.collection("items")
+//            .get()
+//            .addOnSuccessListener { documents ->
+//                for (document in documents) {
+//                    val title = document.getString("title") ?: ""
+//                    val imageUrl = document.getString("imageUrl") ?: ""
+//                    val item = FeaturedEventes(title, imageUrl)
+//                    FeaturedEventsList.add(item)
+//                }
+//                featuredEventsAdapter.notifyDataSetChanged()
+//            }
+//            .addOnFailureListener { exception ->
+//
+//            }
+//    }
 
     private fun loadFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
@@ -103,9 +102,6 @@ class Home : Fragment() {
 
         startCountdown(timeDifferenceMillis)
     }
-
-
-
 
     private fun startCountdown(timeInMillis: Long) {
         countDownTimer = object : CountDownTimer(timeInMillis, 1000) {
@@ -126,5 +122,37 @@ class Home : Fragment() {
                 countdownTextView.text = "Countdown finished"
             }
         }.start()
+    }
+    private fun fetchFromFireStoreEvents(eventType: String, recyclerView: RecyclerView) {
+
+        FeaturedEventsList.clear()
+        // Fetch event data from Firestore for the specified event type
+        db.collection(eventType)
+            .get()
+            .addOnSuccessListener {
+                val showeventlist = mutableListOf<FeaturedEventes>()
+                for (document in it) {
+                    val date = document.getString("date")?:""
+                    val details = document.getString("details")?:""
+                    val form = document.getString("form")?:""
+                    val name = document.getString("name")?:""
+                    val no = document.getLong("no")?:0
+                    val time = document.getString("time")?:""
+                    val url = document.getString("url")?:""
+                    val venue = document.getString("venue")?:""
+                    showeventlist.add(
+                        FeaturedEventes(date, details, form, name, no, time, url, venue)
+                    )
+                }
+
+                // Set up the RecyclerView adapter with the retrieved event data
+                featuredEventsAdapter = featuredEventsAdapter(FeaturedEventsList)
+                recyclerView.layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                recyclerView.adapter = featuredEventsAdapter
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
+            }
     }
 }
