@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.keries.R
 import com.example.keries.adapter.TeamAdapter
 import com.example.keries.dataClass.TeamMember
@@ -42,6 +43,8 @@ class Team : Fragment() {
     private lateinit var toolText : TextView
     private lateinit var logoTool : ImageView
     private lateinit var notifyTool : ImageView
+    private lateinit var loadingAnimationView: LottieAnimationView
+    private  var  loadedRecyclerViewCount :Int = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,10 +57,11 @@ class Team : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Fresco.initialize(requireContext())
-
+        loadingAnimationView = view.findViewById(R.id.loadingAnimationView)
         toolText = requireActivity().findViewById(R.id.titleText)
         notifyTool = requireActivity().findViewById(R.id.notifyLogo)
         logoTool = requireActivity().findViewById(R.id.logoView)
+        loadingAnimationView.visibility = View.VISIBLE
         toolText.text = "Teams"
         notifyTool.setVisibility(View.GONE)
         logoTool.setImageResource(R.drawable.backsvg)
@@ -118,6 +122,13 @@ class Team : Fragment() {
                 val teamMemberList = fetchDataFromFirestore(wing)
                 val teamAdapter = TeamAdapter(teamMemberList)
                 recyclerView.adapter = teamAdapter
+                loadedRecyclerViewCount++
+
+                // Check if all RecyclerViews have loaded
+                if (loadedRecyclerViewCount == 14) {
+                    // All RecyclerViews have loaded, hide the loading animation
+                    loadingAnimationView.visibility = View.GONE
+                }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), "Error fetching data", Toast.LENGTH_SHORT).show()
             }

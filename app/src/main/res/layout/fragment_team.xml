@@ -35,28 +35,22 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.005" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/textView15"-->
-<!--                android:layout_width="97dp"-->
-<!--                android:layout_height="41dp"-->
-<!--                android:layout_marginStart="16dp"-->
-<!--                android:fontFamily="@font/roboto_medium"-->
-<!--                android:gravity="center_vertical"-->
-<!--                android:text="Team"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="34sp"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/backteam"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/upguide" />-->
 
-<!--            <ImageView-->
-<!--                android:id="@+id/backteam"-->
-<!--                android:layout_width="40dp"-->
-<!--                android:layout_height="40dp"-->
-<!--                android:padding="5dp"-->
-<!--                android:src="@drawable/backsvg"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/leftguide"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/upguide" />-->
-
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/loadingAnimationView"
+                android:layout_width="match_parent"
+                android:padding="100dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:elevation="5dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/blackfile" />
 
             <TextView
                 android:id="@+id/coordinator"
