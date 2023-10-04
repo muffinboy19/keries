@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.example.keries.R
+import com.example.keries.classes.ImageViewerDialog
 import com.example.keries.dataClass.TeamMember
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -34,39 +35,19 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
                 itemView.layoutParams = RecyclerView.LayoutParams(0, 0)
             }
 
-//            val shimmer = Shimmer.AlphaHighlightBuilder()
-//                .setDuration(3000)
-//                .setBaseAlpha(.7f)
-//                .setHighlightAlpha(.9f)
-//                .setDirection(Shimmer.Direction.LEFT_TO_RIGHT)
-//                .build()
-
             Glide.with(itemView.context)
                 .load(teamMember.url)
                 .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
                 .error(R.drawable.location_pin_svgrepo_com) // Add an error image
-                .transform(CircleCrop()) // Apply CircleCrop transformation here
+                .transform(CircleCrop())
                 .into(imageView)
 
-//            imageView.load(teamMember.url) {
-//                placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
-//                error(R.drawable.location_pin_svgrepo_com) // Add an error image
-//                transformations(CircleCropTransformation()) // Apply CircleCrop transformation here
-//            }
 
-//
-//            val displayImageOptions = DisplayImageOptions.Builder()
-//                .showImageOnLoading(R.drawable.ic_launcher_background) // Add a placeholder image
-//                .showImageForEmptyUri(R.drawable.location_pin_svgrepo_com) // Add an error image
-//                .showImageOnFail(R.drawable.location_pin_svgrepo_com) // Add an error image
-//                .cacheInMemory(true)
-//                .cacheOnDisk(true)
-//                .considerExifParams(true)
-//                .bitmapConfig(Bitmap.Config.RGB_565)
+            imageView.setOnClickListener {
+                val dialog = ImageViewerDialog(itemView.context, teamMember.url)
+                dialog.show()
+            }
 
-
-//            val imageUri = Uri.parse(teamMember.url)
-//            imageView.setImageURI(imageUri)
         }
     }
 

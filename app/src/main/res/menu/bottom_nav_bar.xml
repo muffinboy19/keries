@@ -10,11 +10,11 @@
     <item
         android:id="@+id/navigation_home"
         android:title="Home"
-        android:icon="@drawable/group_77" />
+        android:icon="@drawable/bluevg" />
     <item
         android:id="@+id/navigation_shop"
         android:title="Shop"
-        android:icon="@drawable/shopsvg" />
+        android:icon="@drawable/shopping_svgrepo_com" />
     <item
         android:id="@+id/navigation_more"
         android:title="More"

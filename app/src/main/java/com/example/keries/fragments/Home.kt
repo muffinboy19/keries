@@ -41,18 +41,18 @@ class Home : Fragment() {
 
 
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
-
-        // Create a GradientDrawable with your desired colors
-        val gradientDrawable = GradientDrawable(
-            GradientDrawable.Orientation.TOP_BOTTOM,
-            intArrayOf(Color.BLACK, Color.BLUE)
-        )
-
-        // Find the root layout view (assuming it's a ConstraintLayout)
-        val rootLayout = rootView.findViewById<ConstraintLayout>(R.id.beta)
-
-        // Set the background drawable to the root layout
-        rootLayout.background = gradientDrawable
+//
+//        // Create a GradientDrawable with your desired colors
+//        val gradientDrawable = GradientDrawable(
+//            GradientDrawable.Orientation.TOP_BOTTOM,
+//            intArrayOf(Color.BLACK, Color.BLUE)
+//        )
+//
+//        // Find the root layout view (assuming it's a ConstraintLayout)
+//        val rootLayout = rootView.findViewById<ConstraintLayout>(R.id.beta)
+//
+//        // Set the background drawable to the root layout
+//        rootLayout.background = gradientDrawable
 
         return rootView
     }

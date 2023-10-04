@@ -26,16 +26,17 @@ class developers : Fragment() {
 
         lottieDev = root.findViewById(R.id.lottieAnimationView)
         lottieDev.visibility = View.VISIBLE
-            lottieDev.playAnimation()
+        lottieDev.playAnimation()
 
-//         Delay for a specified duration (e.g., 3000 milliseconds or 3 seconds)
-            val delayMillis = 3000L
-            Handler(Looper.getMainLooper()).postDelayed({
-                // Stop the animation after the delay
-                lottieDev.cancelAnimation()
-                lottieDev.visibility = View.GONE
-            }, delayMillis)
-        
+// Delay for a specified duration (e.g., 3000 milliseconds or 3 seconds)
+        val delayMillis = 3000L
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Stop the animation after the delay
+            lottieDev.cancelAnimation()
+            lottieDev.visibility = View.GONE
+        }, delayMillis)
+
+
         toolText = requireActivity().findViewById(R.id.titleText)
         notifyTool = requireActivity().findViewById(R.id.notifyLogo)
         logoTool = requireActivity().findViewById(R.id.logoView)

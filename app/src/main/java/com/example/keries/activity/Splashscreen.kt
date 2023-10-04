@@ -7,7 +7,7 @@ import android.os.Handler
 import com.example.keries.R
 
 class splashscreen : AppCompatActivity() {
-    private val SPLASH_DELAY = 4000L // 2 seconds
+    private val SPLASH_DELAY = 2000L // 2 seconds
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
