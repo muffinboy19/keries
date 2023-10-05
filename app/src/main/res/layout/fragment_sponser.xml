@@ -8,12 +8,10 @@
     tools:context=".fragments.sponser">
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@drawable/backgroundimage2"
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.Guideline
@@ -64,16 +62,16 @@
                 android:id="@+id/sponserRecylerView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="16dp"
+                android:paddingStart="10dp"
+                android:layout_marginBottom="40dp"
                 android:paddingBottom="18dp"
                 app:layout_constraintEnd_toStartOf="@+id/rightguide"
                 app:layout_constraintStart_toStartOf="@+id/leftguide"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="@+id/upguide" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

@@ -7,14 +7,13 @@
     android:background="@color/black"
     tools:context=".fragments.Home">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:id="@+id/beta"
-            android:layout_height="wrap_content">
+            android:background="@drawable/backgroundimage2"
+            android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/topGuide"
@@ -37,16 +36,6 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.05" />
 
-
-<!--            <ImageView-->
-<!--                android:id="@+id/notificationbutton"-->
-<!--                android:layout_width="36dp"-->
-<!--                android:layout_height="36dp"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                android:src="@drawable/baseline_notifications_24"-->
-<!--                app:layout_constraintEnd_toStartOf="@+id/rightGuide"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/topGuide" />-->
-
             <TextView
                 android:id="@+id/countdownTextView"
                 android:layout_width="wrap_content"
@@ -61,29 +50,6 @@
                 app:layout_constraintStart_toStartOf="@+id/leftGuide"
                 app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
-<!--            <TextView-->
-<!--                android:id="@+id/textView20"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="12dp"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                android:fontFamily="@font/roboto"-->
-<!--                android:gravity="bottom"-->
-<!--                android:text="Effervescence'23"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="28sp"-->
-<!--                android:textStyle="bold"-->
-<!--                app:layout_constraintStart_toEndOf="@+id/imageView3"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/topGuide" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="36dp"-->
-<!--                android:layout_height="36dp"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                android:src="@drawable/bluevg"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/leftGuide"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/topGuide" />-->
 
             <TextView
                 android:id="@+id/textView21"
@@ -123,7 +89,6 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
 
 
 </FrameLayout>

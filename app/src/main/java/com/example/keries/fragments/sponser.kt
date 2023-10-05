@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.SponsorAdapter
 import com.example.keries.dataClass.sponserDataClass
+import com.example.keries.others.DotGrowItemAnimator
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -51,8 +54,10 @@ class sponser : Fragment() {
             requireActivity().supportFragmentManager.popBackStack()
         }
         sponseradapter = SponsorAdapter(SponserList)
-        sponsorRecyclerView.layoutManager = GridLayoutManager(requireContext(),2)
+        sponsorRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         sponsorRecyclerView.adapter = sponseradapter
+        val itemAnimator = DotGrowItemAnimator()
+        sponsorRecyclerView.itemAnimator = itemAnimator
         fetchFirestoreData()
 
 
