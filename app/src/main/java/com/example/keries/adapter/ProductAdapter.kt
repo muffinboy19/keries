@@ -44,20 +44,20 @@ class productAdapter(private val items: List<productDataClass>,
     inner class productViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private var productNameTextView = itemView.findViewById<TextView>(R.id.productName)
-        private var productDesctriptionTextView = itemView.findViewById<TextView>(R.id.productDescription)
+//        private var productDesctriptionTextView = itemView.findViewById<TextView>(R.id.productDescription)
         private var productTypeTextView = itemView.findViewById<TextView>(R.id.productType)
-        private var productPrizeTextView = itemView.findViewById<TextView>(R.id.produtPrize)
-        private var productImageView = itemView.findViewById<ImageView>(R.id.productImage)
+//        private var productPrizeTextView = itemView.findViewById<TextView>(R.id.produtPrize)
+//        private var productImageView = itemView.findViewById<ImageView>(R.id.productImage)
 
         // Bind data to views
         fun bind(productDataClass: productDataClass) {
             productNameTextView.text = productDataClass.productNames
-            productDesctriptionTextView.text = productDataClass.productDescription
-            productPrizeTextView.text = productDataClass.productPrize
+//            productDesctriptionTextView.text = productDataClass.productDescription
+//            productPrizeTextView.text = productDataClass.productPrize
             productTypeTextView.text = productDataClass.productTypes
 
             // Load image using Glide
-            Glide.with(itemView.context).load(productDataClass.productImageUrl).into(productImageView)
+//            Glide.with(itemView.context).load(productDataClass.productImageUrl).into(productImageView)
         }
     }
 }

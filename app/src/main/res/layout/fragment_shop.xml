@@ -9,18 +9,12 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:background="@drawable/backgroundimage2"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/topGuide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.05" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/rightGuide"
@@ -49,13 +43,12 @@
 <!--                android:layout_marginTop="20dp"/>-->
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="0dp"
                 android:id="@+id/productreyclerview"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="@id/rightGuide"
                 app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
