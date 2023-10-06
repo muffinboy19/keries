@@ -23,8 +23,8 @@ class ImageViewerDialog(context: Context, private val imageUrl: String) : Dialog
         window?.setBackgroundDrawable(ContextCompat.getDrawable(context, android.R.color.transparent))
         Glide.with(context)
             .load(imageUrl)
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.location_pin_svgrepo_com)
+            .placeholder(R.drawable.image_svgrepo_com)
+            .error(R.drawable.image_svgrepo_com)
             .transform(CircleCrop())
             .into(imageView)
 

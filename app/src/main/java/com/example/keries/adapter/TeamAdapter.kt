@@ -37,8 +37,8 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
 
             Glide.with(itemView.context)
                 .load(teamMember.url)
-                .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
-                .error(R.drawable.location_pin_svgrepo_com) // Add an error image
+                .placeholder(R.drawable.image_svgrepo_com) // Add a placeholder image
+                .error(R.drawable.image_svgrepo_com) // Add an error image
                 .transform(CircleCrop())
                 .into(imageView)
 

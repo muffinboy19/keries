@@ -15,7 +15,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginVertical="5dp"
         android:layout_width="56dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/image_svgrepo_com"
         android:layout_height="56dp"
         android:scaleType="centerCrop" />
 

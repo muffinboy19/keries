@@ -47,7 +47,7 @@ class sponser : Fragment() {
         logoTool = requireActivity().findViewById(R.id.logoView)
         toolText.text = "Sponsers"
         notifyTool.setVisibility(View.GONE)
-        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setImageResource(R.drawable.back_svgrepo_com)
         logoTool.setVisibility(View.VISIBLE)
 
         logoTool.setOnClickListener {

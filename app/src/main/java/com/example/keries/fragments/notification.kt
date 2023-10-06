@@ -38,7 +38,7 @@ class notification : Fragment() {
         logoTool = requireActivity().findViewById(R.id.logoView)
         toolText.text = "Notification"
         notifyTool.setVisibility(View.GONE)
-        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setImageResource(R.drawable.back_svgrepo_com)
         logoTool.setVisibility(View.VISIBLE)
 
 //        val back = root.findViewById<ImageView>(R.id.boso)

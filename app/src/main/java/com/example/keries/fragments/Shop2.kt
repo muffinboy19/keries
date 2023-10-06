@@ -39,7 +39,7 @@ class Shop2 : Fragment() {
         logoTool = requireActivity().findViewById(R.id.logoView)
         toolText.text = "Shop"
         notifyTool.setVisibility(View.GONE)
-        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setImageResource(R.drawable.back_svgrepo_com)
         logoTool.setVisibility(View.VISIBLE)
 
         logoTool.setOnClickListener{

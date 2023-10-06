@@ -64,7 +64,7 @@ class Team : Fragment() {
         loadingAnimationView.visibility = View.VISIBLE
         toolText.text = "Teams"
         notifyTool.setVisibility(View.GONE)
-        logoTool.setImageResource(R.drawable.backsvg)
+        logoTool.setImageResource(R.drawable.back_svgrepo_com)
         logoTool.setVisibility(View.VISIBLE)
 
         logoTool.setOnClickListener {
