@@ -20,6 +20,7 @@ class More : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_more, container, false)
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val FAQ = view.findViewById<LinearLayout>(R.id.FAQ)
@@ -34,7 +35,7 @@ class More : Fragment() {
         SPONSER.setOnClickListener {
             loadFragment(sponser())
         }
-        val ABOUT = view.findViewById<LinearLayout>(R.id.AboutUsss )
+        val ABOUT = view.findViewById<LinearLayout>(R.id.AboutUsss)
         ABOUT.setOnClickListener {
             loadFragment(about())
         }
@@ -54,7 +55,9 @@ class More : Fragment() {
     private fun loadFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null)
+            .addToBackStack(null) // Add to back stack so you can navigate back
             .commit()
     }
+
+
 }

@@ -17,9 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp">
 
-
         <androidx.constraintlayout.widget.Guideline
-
             android:id="@+id/rightGuide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -316,8 +314,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-
-            android:background="@drawable/faq_background_switch"
+            android:background="#282828"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="@id/rightGuide"
             app:layout_constraintStart_toStartOf="@id/leftGuide"
@@ -338,9 +335,8 @@
                     android:paddingStart="12dp"
                     android:paddingEnd="10dp"
                     android:text="How can I buy the Effervescence merch?"
-                    android:textColor="@color/faq_background_colour"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
-
 
                 <ImageView
                     android:id="@+id/d6"

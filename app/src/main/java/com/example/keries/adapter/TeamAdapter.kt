@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.MutableLiveData
 
 
 import com.bumptech.glide.Glide
@@ -23,6 +24,7 @@ class TeamAdapter(private val teamMembers: List<TeamMember>) :
         private val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
         private val wingTextView: TextView = itemView.findViewById(R.id.desginations)
         private val imageView: ImageView = itemView.findViewById(R.id.imageView)
+
 
 
         fun bind(teamMember: TeamMember) {

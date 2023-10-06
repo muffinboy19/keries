@@ -1,11 +1,13 @@
 package com.example.keries.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.keries.R
 
@@ -38,7 +40,6 @@ class FAQ : Fragment() {
         logoTool.setImageResource(R.drawable.back_svgrepo_com)
         logoTool.setVisibility(View.VISIBLE)
 
-
         // Initialize UI elements
         val d1 = view.findViewById<ImageView>(R.id.d1)
         val d2 = view.findViewById<ImageView>(R.id.d2)
@@ -52,6 +53,18 @@ class FAQ : Fragment() {
         val a4 = view.findViewById<TextView>(R.id.a4)
         val a5 = view.findViewById<TextView>(R.id.a5)
         val a6 = view.findViewById<TextView>(R.id.a6)
+        val q1 = view.findViewById<TextView>(R.id.q1)
+        val q2 = view.findViewById<TextView>(R.id.q2)
+        val q3 = view.findViewById<TextView>(R.id.q3)
+        val q4 = view.findViewById<TextView>(R.id.q4)
+        val q5 = view.findViewById<TextView>(R.id.q5)
+        val q6 = view.findViewById<TextView>(R.id.q6)
+        val l1 = view.findViewById<LinearLayout>(R.id.l1)
+        val l2 = view.findViewById<LinearLayout>(R.id.l2)
+        val l3 = view.findViewById<LinearLayout>(R.id.l3)
+        val l4 = view.findViewById<LinearLayout>(R.id.l4)
+        val l5 = view.findViewById<LinearLayout>(R.id.l5)
+        val l6 = view.findViewById<LinearLayout>(R.id.l6)
 
         // Initialize the return button
 //        val retw = view.findViewById<ImageView>(R.id.boso)
@@ -68,38 +81,46 @@ class FAQ : Fragment() {
         buttonStates[d6] = false
 
         // Set click listeners for each button
-        d1.setOnClickListener {
-            downFunction(a1, d1)
+        l1.setOnClickListener {
+            downFunction(a1, d1,q1, l1)
         }
-        d2.setOnClickListener {
-            downFunction(a2, d2)
+        l2.setOnClickListener {
+            downFunction(a2, d2, q2,l2)
         }
-        d3.setOnClickListener {
-            downFunction(a3, d3)
+        l3.setOnClickListener {
+            downFunction(a3, d3, q3,l3)
         }
-        d4.setOnClickListener {
-            downFunction(a4, d4)
+        l4.setOnClickListener {
+            downFunction(a4, d4, q4,l4)
         }
-        d5.setOnClickListener {
-            downFunction(a5, d5)
+        l5.setOnClickListener {
+            downFunction(a5, d5, q5 ,l5)
         }
-        d6.setOnClickListener {
-            downFunction(a6, d6)
+        l6.setOnClickListener {
+            downFunction(a6, d6, q6, l6)
         }
     }
 
     // Toggle the visibility of the answer text and rotate the arrow button
-    private fun downFunction(a: TextView, d: ImageView) {
+    private fun downFunction(a: TextView, d: ImageView, q:TextView, l:LinearLayout) {
         val currentState = buttonStates[d] ?: false
-
         if (currentState) {
             // If the answer is visible, hide it and rotate the arrow button back to default
             a.visibility = View.GONE
+            a.setTextColor(Color.WHITE)
+            q.setTextColor(Color.WHITE)
             d.animate().rotation(0F)
+            d.setColorFilter(Color.WHITE)
+            l.setBackgroundColor(Color.parseColor("#282828"))
+
         } else {
             // If the answer is hidden, show it and rotate the arrow button 180 degrees
             a.visibility = View.VISIBLE
             d.animate().rotation(180F)
+            a.setTextColor(Color.BLACK)
+            q.setTextColor(Color.BLACK)
+            d.setColorFilter(Color.BLACK)
+            l.setBackgroundColor(Color.WHITE)
         }
         // Update the button state
         buttonStates[d] = !currentState
@@ -156,10 +177,3 @@ class FAQ : Fragment() {
 //        // Update the state in the map
 //        buttonStates[d] = !currentState
 //    }
-
-
-
-
-
-
-
