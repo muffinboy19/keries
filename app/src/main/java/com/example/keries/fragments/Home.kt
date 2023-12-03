@@ -3,6 +3,7 @@ package com.example.keries.fragments
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,9 @@ import com.jackandphantom.carouselrecyclerview.CarouselLayoutManager
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+
 
 class Home : Fragment() {
     private lateinit var mainstageEventRecyclerView: RecyclerView
@@ -30,6 +34,7 @@ class Home : Fragment() {
     private lateinit var toolText : TextView
     private lateinit var logoTool : ImageView
     private lateinit var notifyTool : ImageView
+    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private val db = FirebaseFirestore.getInstance()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,7 +70,32 @@ class Home : Fragment() {
         notifyTool.setOnClickListener {
             loadFragment(notification())
         }
+        swipeRefreshLayout = view.findViewById(R.id.swiperefresh)
+        swipeRefreshLayout.setOnRefreshListener {
+            Log.d("HomeFragment", "Swipe to refresh triggered")
+            // Implement your refresh logic here
+            fetchData()
+        }
+
+
+
     }
+
+    private fun fetchData() {
+        Log.d("Home", "Fetching data...")
+
+        // Implement your data fetching logic here
+        // For example, re-fetch events from Firestore
+        this.fetchFromFireStoreEvents("Main Stage", mainstageEventRecyclerView)
+
+        // After fetching data, stop the refresh animation
+        swipeRefreshLayout.isRefreshing = false
+    }
+
+
+
+
+
 
     fun onItemClick(item: FeaturedEventes){
         val bundle=Bundle()
@@ -143,6 +173,7 @@ class Home : Fragment() {
                         FeaturedEventes(date, details, form, name, no, time, url, venue)
                     )
                 }
+
 
 
                 // Add the data to your existing adapter and notify it to update the RecyclerView
