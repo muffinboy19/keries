@@ -21,11 +21,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Keries"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".activity.BaseHome"
-            android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".others.MyFirebaseMessagingService"

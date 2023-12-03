@@ -1,8 +1,6 @@
 package com.example.keries.fragments
 
 
-import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.fragment.app.Fragment
@@ -12,14 +10,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.adapter.featuredEventsAdapter
-import com.example.keries.dataClass.Event_DataClass
 import com.example.keries.dataClass.FeaturedEventes
 import com.google.firebase.firestore.FirebaseFirestore
+import com.jackandphantom.carouselrecyclerview.CarouselLayoutManager
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -39,41 +36,24 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
-//
-//        // Create a GradientDrawable with your desired colors
-//        val gradientDrawable = GradientDrawable(
-//            GradientDrawable.Orientation.TOP_BOTTOM,
-//            intArrayOf(Color.BLACK, Color.BLUE)
-//        )
-//
-//        // Find the root layout view (assuming it's a ConstraintLayout)
-//        val rootLayout = rootView.findViewById<ConstraintLayout>(R.id.beta)
-//
-//        // Set the background drawable to the root layout
-//        rootLayout.background = gradientDrawable
 
         return rootView
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
-
-
         mainstageEventRecyclerView = view.findViewById(R.id.FeaturedEventRecylerView)
         mainStageEventAdapter = featuredEventsAdapter(aox,this)
+
+
         mainstageEventRecyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            CarouselLayoutManager(true,true, 0.5F,true,true,true, LinearLayoutManager.HORIZONTAL)
         mainstageEventRecyclerView.adapter = mainStageEventAdapter
+
         countdownTextView = view.findViewById(R.id.countdownTextView)
         fetchSystemDateTime()
         fetchFromFireStoreEvents("Main Stage",mainstageEventRecyclerView)
-
-
 
         toolText = requireActivity().findViewById(R.id.titleText)
         notifyTool = requireActivity().findViewById(R.id.notifyLogo)
@@ -86,7 +66,6 @@ class Home : Fragment() {
             loadFragment(notification())
         }
     }
-
 
     fun onItemClick(item: FeaturedEventes){
         val bundle=Bundle()
@@ -106,15 +85,12 @@ class Home : Fragment() {
         transaction.commit()
     }
 
-
-
     private fun loadFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .addToBackStack(null) // Add to back stack so you can navigate back
             .commit()
     }
-
 
     private fun fetchSystemDateTime() {
         val currentTimeMillis = System.currentTimeMillis()

@@ -7,88 +7,102 @@
     android:background="@color/black"
     tools:context=".fragments.Home">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/beta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundimage2">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <TextView
+            android:id="@+id/countdownTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="00:00:00"
+            android:textColor="@color/white"
+            android:textSize="52sp"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:id="@+id/beta"
-            android:background="@drawable/backgroundimage2"
-            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/roboto"
+            android:text="ITS BEGINING IN "
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/topGuide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.05" />
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/FeaturedEventRecylerView"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="100dp"-->
+        <!--            android:layout_marginBottom="20dp"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintEnd_toEndOf="@id/rightGuide"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/leftGuide"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/countdownTextView"-->
+        <!--            tools:listitem="@layout/featuredeventlayout" />-->
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/rightGuide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.95" />
+        <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+            android:id="@+id/FeaturedEventRecylerView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="100dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuide"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/countdownTextView"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/featuredeventlayout" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/leftGuide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.05" />
-
-            <TextView
-                android:id="@+id/countdownTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="68dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="00:00:00"
-                android:textColor="@color/white"
-                android:textSize="52sp"
-                app:layout_constraintEnd_toStartOf="@+id/rightGuide"
-                app:layout_constraintStart_toStartOf="@+id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:fontFamily="@font/roboto"
-                android:text="ITS BEGINING IN "
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/FeaturedEventRecylerView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@id/rightGuide"
-                app:layout_constraintStart_toStartOf="@id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="Day          Hours       miniutes      seconds"
-                android:textColor="#0000ff"
-                app:layout_constraintEnd_toStartOf="@+id/rightGuide"
-                app:layout_constraintStart_toStartOf="@+id/leftGuide"
-                app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Day          Hours       miniutes      seconds"
+            android:textColor="#0000ff"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toStartOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/countdownTextView" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>

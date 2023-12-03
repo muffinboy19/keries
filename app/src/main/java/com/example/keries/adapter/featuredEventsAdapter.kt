@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.keries.R
 import com.example.keries.dataClass.FeaturedEventes
@@ -20,7 +21,7 @@ class featuredEventsAdapter(private val items: List<FeaturedEventes>,private val
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeaturedEventesViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.bronchi, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.featuredeventlayout, parent, false)
         return FeaturedEventesViewHolder(view)
     }
 
@@ -37,7 +38,7 @@ class featuredEventsAdapter(private val items: List<FeaturedEventes>,private val
 
     inner class FeaturedEventesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val imageOfEvent = itemView.findViewById<ImageView>(R.id.ish)
+        private val imageOfEvent = itemView.findViewById<ImageView>(R.id.featuredEventImageView)
 
         fun bind(featuredEventes: FeaturedEventes) {
             Glide.with(itemView.context)

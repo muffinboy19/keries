@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.keries.R
 import com.example.keries.dataClass.Event_DataClass
 import com.example.keries.fragments.Events
-import com.example.keries.fragments.Home
 
 
 class ShowEventAdapter(private val showevents: List<Event_DataClass>, private val itemClickListener: Events) :
@@ -28,8 +27,6 @@ class ShowEventAdapter(private val showevents: List<Event_DataClass>, private va
                 .into(imageView)
 
         }
-
-
     }
 
 
