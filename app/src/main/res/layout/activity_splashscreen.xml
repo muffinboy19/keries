@@ -8,11 +8,12 @@
     tools:context=".activity.splashscreen">
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="254dp"
         android:layout_height="254dp"
-        android:layout_marginTop="213dp"
-        android:src="@drawable/logo_effe"
         android:elevation="10dp"
+        android:src="@drawable/logo_effe"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
